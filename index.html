@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>jQuery - Floating Social Share Plugin</title>
+        <meta name="author" content="Burak Özdemir">
+        <meta name="rating" content="general">
+        <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="jQuery floating social share plugin works with Font Awesome">
+        <meta name="keywords" content="online alarm, alarm programı, alarm clock, alarm sesi, alarm çalar saat, youtube alarm">
+        <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/floating-share.css" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin,latin-ext" rel="stylesheet" />
+        <style>
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed,
+			figure, figcaption, footer, header, hgroup,
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			/* HTML5 display-role reset for older browsers */
+			article, aside, details, figcaption, figure,
+			footer, header, hgroup, menu, nav, section {
+				display: block;
+			}
+			body {
+				line-height: 1;
+			}
+			ol, ul {
+				list-style: none;
+			}
+			blockquote, q {
+				quotes: none;
+			}
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+				content: '';
+				content: none;
+			}
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			.youCanRemoveMe{
+				height:1024px; 
+				background: #ddd; 
+				text-align:center;
+				font-family:'Open Sans', sans-serif;
+				font-size:24px;
+				line-height: 20;
+			}
+        </style>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+		<div class="youCanRemoveMe">
+			<h1>jQuery - Floating Social Share Plugin</h1>
+			<p>With counters for Facebook, Twitter, Linkedin, Pinterest. </p>
+			<p>Needs Font Awesome & jQuery to work</p>
+			<p>Burak Özdemir : <a href="mailto:mail@burakozdemir.co.u">mail@burakozdemir.co.uk</a></p>
+		</div>
+    <script type="text/javascript" src="./js/jquery.floating-share.js"></script>
+    <script>
+    $(function(){
+		$("body").floatingShare({
+			place: "top-left", // alternatively top-right
+            counter: true, // set to false to hide counters of pinterest, facebook, twitter and linkedin
+            buttons: ["facebook","twitter","google-plus","linkedin","pinterest","stumbleupon","envelope"], // all of the currently avalaible social buttons
+            title: document.title, // your title, default is current page's title
+            url: window.location.href,  // your url, default is current page's url
+            text: "share with ", // the title of a tags
+            description: $("meta[name='description']").attr("content"), // your description, default is current page's description
+            popup_width: 400, // the sharer popup's width, default is 400px
+            popup_height: 300 // the sharer popup's width, default is 300px
+		});
+	});
+    </script>
+    </body>
+</html>
