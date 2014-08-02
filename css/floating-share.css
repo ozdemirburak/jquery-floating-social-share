@@ -22,10 +22,10 @@
     list-style-type: none;
 }
 
-#floatingShare a, a:focus, a:hover {
+#floatingShare a, #floatingShare a:focus, #floatingShare a:hover {
     color: #fff;
 }
-#floatingShare a, a:visited, a:focus, a:active, a:hover {
+#floatingShare a, #floatingShare a:visited, #floatingShare a:focus, #floatingShare a:active, #floatingShare a:hover {
     outline: 0 none !important;
 }
 
@@ -90,7 +90,7 @@
     background-color: #eb4924;
 }
 
-.shareCount{
+#floatingShare .shareCount{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -100,6 +100,6 @@
     font-size:  10px;
 }
 
-.mtop5{
+#floatingShare .mtop5{
     margin-top: 5px;
 }
