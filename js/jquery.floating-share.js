@@ -1,8 +1,8 @@
 /*!
- * jQuery Floating Share Plugin v1.0.0
+ * jQuery Floating Share Plugin v1.0.1
  * http://www.burakozdemir.co.uk
  *
- * Copyright 2014 Burak Özdemir - <mail@burakozdemir.co.uk>
+ * Copyright 2015 Burak Özdemir - <mail@burakozdemir.co.uk>
  * Released under the MIT license
  */
 
@@ -12,7 +12,7 @@
         defaults = {
             place: "top-left",
             counter: true,
-            buttons: ["facebook","twitter","google-plus","linkedin","envelope"],
+            buttons: ["facebook", "twitter", "google-plus", "linkedin"],
             title: document.title,
             url: window.location.href,
             text: "share with ",
@@ -33,7 +33,7 @@
         init: function () {
 
             // store to access in for each
-            var $gey = this;
+            var $base = this;
 
             // check if user's place is defined in places
             if ($.inArray(this.settings.place, places) == -1)
@@ -41,20 +41,20 @@
 
             // create element, attention : important tag in size
             var $template = $("<div>", {id: "floatingShare"});
-            var $child = $("<div>", {class: this.settings.place})
+            var $child = $("<div>", {class: this.settings.place});
             $child.appendTo($template);
 
             // for each buttons, append the buttons
             $.each( this.settings.buttons, function( index, value ){
                 $.each( networks, function( k, v ) {
                     if (value == k) {
-                        var $component = $("<a>", { title: $gey.settings.title, class: ""+v.className+" pop-upper"});
+                        var $component = $("<a>", { title: $base.settings.title, class: ""+v.className+" pop-upper"});
                         var $icon = $("<i>", {class: "mtop5 fa fa-" + value + ""}); // font-awesome here
                         var _href = v.url;
-                        _href = _href.replace('{url}', $gey.settings.url).replace('{title}', $gey.settings.title).replace('{description}', $gey.settings.description);
-                        $component.attr("href", _href).attr("title", $gey.settings.text + value).append($icon);
-                        if($gey.settings.counter === true){
-                            setShareCount(value, $gey.settings.url,$component);
+                        _href = _href.replace('{url}', $base.settings.url).replace('{title}', $base.settings.title).replace('{description}', $base.settings.description);
+                        $component.attr("href", _href).attr("title", $base.settings.text + value).append($icon);
+                        if($base.settings.counter === true){
+                            setShareCount(value, $base.settings.url,$component);
                         }
                         $child.append($component);
                         return false; // end each networks if found
@@ -68,7 +68,7 @@
             var diss = $(this.element).find('.pop-upper');
             diss.on("click",function(event) {
                 event.preventDefault();
-                openPopUp($(this).attr("href"),$(this).attr("title"),$gey.settings.popup_width,$gey.settings.popup_height);
+                openPopUp($(this).attr("href"),$(this).attr("title"),$base.settings.popup_width,$base.settings.popup_height);
             });
         }
 
@@ -95,13 +95,27 @@
         userWindow.focus();
     }
 
+    function shorten(num) {
+        if (num >= 1000000000) {
+            return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+        }
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+        }
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+        }
+        return num;
+    }
+
     function setShareCount(network,url,$component){
+        url = encodeURI(url);
         switch(network) {
             case "facebook":
                 $.get('http://graph.facebook.com/'+url, function(data){
                     if(data.shares && data.shares > 0){
-                        var $shareCount = $("<div>", {class: "shareCount"});
-                        $shareCount.append(data.shares); // probably didn't get here so we will update it
+                        var $shareCount = $("<span>", {class: "shareCount"});
+                        $shareCount.append(shorten(data.shares)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
                         $component.find("i").removeClass("mtop5");
@@ -111,8 +125,8 @@
             case "twitter":
                 $.get('http://urls.api.twitter.com/1/urls/count.json?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
-                        var $shareCount = $("<div>", {class: "shareCount"});
-                        $shareCount.append(data.count); // probably didn't get here so we will update it
+                        var $shareCount = $("<span>", {class: "shareCount"});
+                        $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
                         $component.find("i").removeClass("mtop5");
@@ -122,8 +136,8 @@
             case "linkedin":
                 $.get('http://www.linkedin.com/countserv/count/share?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
-                        var $shareCount = $("<div>", {class: "shareCount"});
-                        $shareCount.append(data.count); // probably didn't get here so we will update it
+                        var $shareCount = $("<span>", {class: "shareCount"});
+                        $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
                         $component.find("i").removeClass("mtop5");
@@ -133,13 +147,31 @@
             case "pinterest":
                 $.get('http://api.pinterest.com/v1/urls/count.json?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
-                        var $shareCount = $("<div>", {class: "shareCount"});
-                        $shareCount.append(data.count); // probably didn't get here so we will update it
+                        var $shareCount = $("<span>", {class: "shareCount"});
+                        $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
                         $component.find("i").removeClass("mtop5");
                     }
                 },'jsonp');
+                break;
+            case "google-plus":
+                if (!window.services) {
+                    window.services = {};
+                    window.services.gplus = {}
+                }
+                window.services.gplus.cb = function (number) {
+                    window.gplusShares = number
+                };
+                $.getScript('http://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
+                    if(window.gplusShares > 0) {
+                        var $shareCount = $("<span>", {class: "shareCount"});
+                        $shareCount.append(shorten(window.gplusShares)); // probably didn't get here so we will update it
+                        $component.append($shareCount);
+                        // had been shared before, then remove the margin top
+                        $component.find("i").removeClass("mtop5");
+                    }
+                });
                 break;
             default:
                 return -1;
