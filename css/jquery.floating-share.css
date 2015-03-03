@@ -1,30 +1,39 @@
 /*!
- * Floating Share Plugin CSS v1.0.0
+ * Floating Share Plugin CSS v1.0.1
  * http://www.burakozdemir.co.uk
- * Copyright 2014 Burak Özdemir - <mail@burakozdemir.co.uk>
+ * Copyright 2015 Burak Özdemir - <mail@burakozdemir.co.uk>
  * Released under the MIT license
  */
 
 *{
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #floatingShare{
     position: relative;
-    text-align: center;
 }
 
 #floatingShare a{
     position: relative;
-    width:42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
+    line-height: 24px;
     display:list-item;
     list-style-type: none;
-}
-
-#floatingShare a, #floatingShare a:focus, #floatingShare a:hover {
+    padding: 5px 0;
+    text-align: center;
     color: #fff;
 }
+
+#floatingShare a:focus, #floatingShare a:hover {
+    color: #fff;
+    width:52px;
+    opacity: 0.8;
+    transition-duration: 0.3s;
+    transition-property: right;
+    transition-timing-function: ease-out;
+}
+
 #floatingShare a, #floatingShare a:visited, #floatingShare a:focus, #floatingShare a:active, #floatingShare a:hover {
     outline: 0 none !important;
 }
@@ -102,4 +111,44 @@
 
 #floatingShare .mtop5{
     margin-top: 5px;
+}
+
+@media only screen and (min-device-width: 0px) and (max-width:961px){
+
+    #floatingShare{
+        margin-top: 50px;
+    }
+
+    #floatingShare .top-left{
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    #floatingShare .top-right{
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    #floatingShare a{
+        position: relative;
+        float: left;
+        width: 16.6667%; /* fallback for non-calc() browsers */
+        width: calc(100% / 6);
+        display:list-item;
+        list-style-type: none;
+    }
+
+    #floatingShare a:focus, #floatingShare a:hover {
+        width: 16.6667%; /* fallback for non-calc() browsers */
+        width: calc(100% / 6);
+        -moz-transition-property: none;
+        -webkit-transition-property: none;
+        -o-transition-property: none;
+        transition-property: none;
+    }
+
 }
