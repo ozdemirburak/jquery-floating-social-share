@@ -20,7 +20,7 @@ Include jQuery and Font-Awesome and the plugin on a page. Then call the `floatin
 </script>
 ```
 
-#### [Demo](http://burakozdemir.co.uk/FloatingShare)
+#### [Demo](http://onlinealarmkur.com)
 
 ## Options
 
@@ -40,7 +40,7 @@ Include jQuery and Font-Awesome and the plugin on a page. Then call the `floatin
 $("body").floatingShare({
 	place: "top-left", // alternatively top-right
     counter: true, // set to false to hide counters of pinterest, facebook, twitter, linkedin and google-plus
-    buttons: ["facebook","twitter","google-plus","linkedin","pinterest"], // all of the currently avalaible social buttons
+    buttons: ["facebook","twitter","google-plus","linkedin","envelope","stumbleupon","pinterest"], // all of the currently avalaible social buttons
     title: document.title, // your title, default is current page's title
     url: window.location.href,  // your url, default is current page's url
     text: "share with ", // the title of a tags
