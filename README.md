@@ -20,6 +20,7 @@ Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-f
 
 Finally, call the `floatingShare` method on body with your custom options.
 
+```html
 <script>
 	$("body").floatingShare({
  		buttons: ["facebook","twitter","google-plus"],
