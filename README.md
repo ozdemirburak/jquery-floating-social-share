@@ -1,17 +1,23 @@
-jQuery Floating Share Plugin
+jQuery Floating Social Share
 ================================
 
 Simple jQuery floating social media sharer plugin works with Font-Awesome. Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest and Google Plus with counter feature, StumbleUpon and Email without counter feature.
 
 ## Getting Started
 
+Install via bower
+
+`bower install jquery-floating-social-share`
+
+Then,
+
 Include jQuery and Font-Awesome and the plugin on a page. Then call the `floatingShare` method on body with your options.
 
 ```html
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/jquery.floating-share.css" />
+<link rel="stylesheet" type="text/css" href="./dist/css/jquery.floating-social-share.min.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="js/jquery.floating-share.min.js"></script>
+<script type="text/javascript" src="./dist/js/jquery.floating-social-share.min.js"></script>
 <script>
 	$("body").floatingShare({
  		buttons: ["facebook","twitter","google-plus","linkedin"],
