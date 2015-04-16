@@ -1,8 +1,8 @@
 /*!
- * jQuery Floating Share Plugin v1.0.1
- * http://www.burakozdemir.co.uk
+ * jQuery Floating Social Share Plugin v1.0.0
+ * http://burakozdemir.co.uk
  *
- * Copyright 2015 Burak Özdemir - <mail@burakozdemir.co.uk>
+ * Copyright 2015 Burak Özdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
  */
 
