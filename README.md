@@ -9,7 +9,7 @@ Install via bower and include by your `bower_components` folder.
 
 `bower install jquery-floating-social-share`
 
-Or install via zip, then include jQuery and Font-Awesome and the plugin on a page.
+Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and Font-Awesome and the plugin on a page.
 
 ```html
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
