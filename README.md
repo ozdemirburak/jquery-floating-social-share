@@ -5,7 +5,7 @@ Simple jQuery floating social media sharer plugin works with Font-Awesome. Curre
 
 ## Getting Started
 
-Install via bower and include by your `bower_components` folder.
+Install via bower and include from your `bower_components` folder.
 
 `bower install jquery-floating-social-share`
 
