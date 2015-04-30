@@ -112,7 +112,7 @@
         url = encodeURI(url);
         switch(network) {
             case "facebook":
-                $.get('http://graph.facebook.com/'+url, function(data){
+                $.get('https://graph.facebook.com/'+url, function(data){
                     if(data.shares && data.shares > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
                         $shareCount.append(shorten(data.shares)); // probably didn't get here so we will update it
@@ -123,7 +123,7 @@
                 },'jsonp');
                 break;
             case "twitter":
-                $.get('http://urls.api.twitter.com/1/urls/count.json?url='+url+'&callback=?', function(data){
+                $.get('https://urls.api.twitter.com/1/urls/count.json?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
                         $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
@@ -134,7 +134,7 @@
                 },'jsonp');
                 break;
             case "linkedin":
-                $.get('http://www.linkedin.com/countserv/count/share?url='+url+'&callback=?', function(data){
+                $.get('https://www.linkedin.com/countserv/count/share?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
                         $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
@@ -145,7 +145,7 @@
                 },'jsonp');
                 break;
             case "pinterest":
-                $.get('http://api.pinterest.com/v1/urls/count.json?url='+url+'&callback=?', function(data){
+                $.get('https://api.pinterest.com/v1/urls/count.json?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
                         $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
@@ -163,7 +163,7 @@
                 window.services.gplus.cb = function (number) {
                     window.gplusShares = number
                 };
-                $.getScript('http://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
+                $.getScript('https://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
                     if(window.gplusShares > 0) {
                         var $shareCount = $("<span>", {class: "shareCount"});
                         $shareCount.append(shorten(window.gplusShares)); // probably didn't get here so we will update it
