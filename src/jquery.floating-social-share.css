@@ -1,5 +1,5 @@
 /*!
- * jQuery Floating Social Share CSS v1.0.0
+ * jQuery Floating Social Share CSS v1.0.1
  * http://burakozdemir.co.uk
  * Copyright 2015 Burak Özdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
@@ -9,11 +9,11 @@
     box-sizing: border-box;
 }
 
-#floatingShare{
+#floatingSocialShare{
     position: relative;
 }
 
-#floatingShare a{
+#floatingSocialShare a{
     position: relative;
     width: 48px;
     height: 48px;
@@ -25,7 +25,7 @@
     color: #fff;
 }
 
-#floatingShare a:focus, #floatingShare a:hover {
+#floatingSocialShare a:focus, #floatingSocialShare a:hover {
     color: #fff;
     width:52px;
     opacity: 0.8;
@@ -34,72 +34,57 @@
     transition-timing-function: ease-out;
 }
 
-#floatingShare a, #floatingShare a:visited, #floatingShare a:focus, #floatingShare a:active, #floatingShare a:hover {
+#floatingSocialShare a, #floatingSocialShare a:visited, #floatingSocialShare a:focus, #floatingSocialShare a:active, #floatingSocialShare a:hover {
     outline: 0 none !important;
 }
 
-/* icon sizes */
-#floatingShare i{
+#floatingSocialShare i{
     line-height: inherit;
     font-size: 24px;
     text-align: center;
 }
 
-#floatingShare .top-left{
+#floatingSocialShare .top-left{
     position: fixed;
     top: 20%;
     left:0;
 }
 
-#floatingShare .top-right{
+#floatingSocialShare .top-right{
     position: fixed;
     top: 20%;
     right:0;
 }
 
-/* facebook */
-
-#floatingShare .feysbuk{
+#floatingSocialShare .facebook{
     background-color: #3b5998;
 }
 
-/* twitter */
-
-#floatingShare .tivitir{
+#floatingSocialShare .twitter{
     background-color: #00aced;
 }
 
-/* google plus */
-
-#floatingShare .gogil{
+#floatingSocialShare .google-plus{
     background-color: #dd4b39;
 }
 
-/* linkedin */
-
-#floatingShare .linktin{
+#floatingSocialShare .linkedin{
     background-color: #007bb6;
 }
 
-/* envelope */
-
-#floatingShare .meyil{
+#floatingSocialShare .envelope{
     background-color: #726C6C;
 }
 
-/* pinterest */
-
-#floatingShare .pinter{
+#floatingSocialShare .pinterest{
     background-color: #c92228;
 }
 
-/* stumble upon */
-
-#floatingShare .stambul{
+#floatingSocialShare .stumbleupon{
     background-color: #eb4924;
 }
 
-#floatingShare .shareCount{
+#floatingSocialShare .shareCount{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -109,42 +94,38 @@
     font-size:  10px;
 }
 
-#floatingShare .mtop5{
+#floatingSocialShare .m-top5{
     margin-top: 5px;
 }
 
 @media only screen and (min-device-width: 0px) and (max-width:961px){
 
-    #floatingShare{
+    #floatingSocialShare{
         margin-top: 50px;
     }
 
-    #floatingShare .top-left{
+    #floatingSocialShare .top-left{
         top: auto;
         bottom: 0;
         width: 100%;
         z-index: 999;
     }
 
-    #floatingShare .top-right{
+    #floatingSocialShare .top-right{
         top: auto;
         bottom: 0;
         width: 100%;
         z-index: 999;
     }
 
-    #floatingShare a{
+    #floatingSocialShare a{
         position: relative;
         float: left;
-        width: 16.6667%; /* fallback for non-calc() browsers */
-        width: calc(100% / 6);
         display:list-item;
         list-style-type: none;
     }
 
-    #floatingShare a:focus, #floatingShare a:hover {
-        width: 16.6667%; /* fallback for non-calc() browsers */
-        width: calc(100% / 6);
+    #floatingSocialShare a:focus, #floatingSocialShare a:hover {
         -moz-transition-property: none;
         -webkit-transition-property: none;
         -o-transition-property: none;

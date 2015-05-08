@@ -1,5 +1,5 @@
 /*!
- * jQuery Floating Social Share Plugin v1.0.0
+ * jQuery Floating Social Share Plugin v1.0.1
  * http://burakozdemir.co.uk
  *
  * Copyright 2015 Burak Özdemir - <https://github.com/ozdemirburak>
@@ -8,7 +8,7 @@
 
 ;(function ( $, window, document, undefined ) {
 
-    var pluginName = "floatingShare",
+    var pluginName = "floatingSocialShare",
         defaults = {
             place: "top-left",
             counter: true,
@@ -40,16 +40,16 @@
                 this.settings.place = this._defaults.place;
 
             // create element, attention : important tag in size
-            var $template = $("<div>", {id: "floatingShare"});
+            var $template = $("<div>", {id: "floatingSocialShare"});
             var $child = $("<div>", {class: this.settings.place});
             $child.appendTo($template);
 
-            // for each buttons, append the buttons
+            // for each buttons, append
             $.each( this.settings.buttons, function( index, value ){
                 $.each( networks, function( k, v ) {
                     if (value == k) {
                         var $component = $("<a>", { title: $base.settings.title, class: ""+v.className+" pop-upper"});
-                        var $icon = $("<i>", {class: "mtop5 fa fa-" + value + ""}); // font-awesome here
+                        var $icon = $("<i>", {class: "m-top5 fa fa-" + value + ""}); // font-awesome here
                         var _href = v.url;
                         _href = _href.replace('{url}', $base.settings.url).replace('{title}', $base.settings.title).replace('{description}', $base.settings.description);
                         $component.attr("href", _href).attr("title", $base.settings.text + value).append($icon);
@@ -61,27 +61,39 @@
                     }
                 });
             });
+
             // appended all the elements
             $template.appendTo(this.element);
 
-            // get all the popup guys
-            var diss = $(this.element).find('.pop-upper');
+            // get all the selected buttons
+            var diss = $(this.element).find(".pop-upper");
+
+            // set popups for buttons
             diss.on("click",function(event) {
                 event.preventDefault();
-                openPopUp($(this).attr("href"),$(this).attr("title"),$base.settings.popup_width,$base.settings.popup_height);
+                openPopUp($(this).attr("href"), $(this).attr("title"), $base.settings.popup_width, $base.settings.popup_height);
             });
+
+            // check mobile css for buttons on load
+            setMobileCss(diss);
+
+            // check mobile css for buttons on resize
+            $(window).resize(function() {
+                setMobileCss(diss);
+            });
+
         }
 
     });
 
     var networks = {
-        "facebook" : { className: "feysbuk", url:"https://www.facebook.com/sharer/sharer.php?u={url}&t={title}" },
-        "twitter": { className: "tivitir", url:"https://twitter.com/home?status={url}" },
-        "google-plus": { className: "gogil", url: "https://plus.google.com/share?url={url}" },
-        "linkedin":  { className: "linktin", url: "https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={description}&source=" },
-        "envelope":  { className: "meyil", url: "mailto:asd@asd.com?subject={url}" },
-        "pinterest":  { className: "pinter", url: "https://pinterest.com/pin/create%2Fbutton/?url={url}" },
-        "stumbleupon":  { className: "stambul", url: "https://www.stumbleupon.com/submit?url={url}&title={title}" }
+        "facebook" : { className: "facebook", url:"https://www.facebook.com/sharer/sharer.php?u={url}&t={title}" },
+        "twitter": { className: "twitter", url:"https://twitter.com/home?status={url}" },
+        "google-plus": { className: "google-plus", url: "https://plus.google.com/share?url={url}" },
+        "linkedin":  { className: "linkedin", url: "https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={description}&source=" },
+        "envelope":  { className: "envelope", url: "mailto:asd@asd.com?subject={url}" },
+        "pinterest":  { className: "pinterest", url: "https://pinterest.com/pin/create%2Fbutton/?url={url}" },
+        "stumbleupon":  { className: "stumbleupon", url: "https://www.stumbleupon.com/submit?url={url}&title={title}" }
     };
 
     var places = ["top-left", "top-right"];
@@ -108,6 +120,20 @@
         return num;
     }
 
+    function setMobileCss(objects){
+        var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        if(w < 961) {
+            $.each( objects, function(){
+                $(this).css("width", 100 / objects.length + "%");
+            });
+        }
+        else{
+            $.each( objects, function(){
+                $(this).removeAttr("style");
+            });
+        }
+    }
+
     function setShareCount(network,url,$component){
         url = encodeURI(url);
         switch(network) {
@@ -118,7 +144,7 @@
                         $shareCount.append(shorten(data.shares)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
-                        $component.find("i").removeClass("mtop5");
+                        $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
                 break;
@@ -129,7 +155,7 @@
                         $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
-                        $component.find("i").removeClass("mtop5");
+                        $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
                 break;
@@ -140,7 +166,7 @@
                         $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
-                        $component.find("i").removeClass("mtop5");
+                        $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
                 break;
@@ -151,7 +177,7 @@
                         $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
-                        $component.find("i").removeClass("mtop5");
+                        $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
                 break;
@@ -163,13 +189,13 @@
                 window.services.gplus.cb = function (number) {
                     window.gplusShares = number
                 };
-                $.getScript('https://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
+                $.getScript('http://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
                     if(window.gplusShares > 0) {
                         var $shareCount = $("<span>", {class: "shareCount"});
                         $shareCount.append(shorten(window.gplusShares)); // probably didn't get here so we will update it
                         $component.append($shareCount);
                         // had been shared before, then remove the margin top
-                        $component.find("i").removeClass("mtop5");
+                        $component.find("i").removeClass("m-top5");
                     }
                 });
                 break;

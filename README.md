@@ -12,24 +12,24 @@ Install via bower and include from your `bower_components` folder.
 Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and Font-Awesome and the plugin on a page.
 
 ```html
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="./dist/css/jquery.floating-social-share.min.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="./dist/js/jquery.floating-social-share.min.js"></script>
 ```
 
-Finally, call the `floatingShare` method on body with your custom options.
+Finally, call the `floatingSocialShare` method on body with your custom options.
 
 ```html
 <script>
-	$("body").floatingShare({
+	$("body").floatingSocialShare({
  		buttons: ["facebook","twitter","google-plus"],
         text: "share with: "
 	});
 </script>
 ```
 
-#### [Demo](http://onlinealarmkur.com)
+#### [Live Demo](http://onlinealarmkur.com)
 
 ## Options
 
@@ -46,16 +46,16 @@ Finally, call the `floatingShare` method on body with your custom options.
 ## Full Example
 
 ```javascript
-$("body").floatingShare({
+$("body").floatingSocialShare({
 	place: "top-left", // alternatively top-right
-    counter: true, // set to false to hide counters of pinterest, facebook, twitter, linkedin and google-plus
+    counter: true, // set to false for hiding the counters of pinterest, facebook, twitter, linkedin and google-plus
     buttons: ["facebook","twitter","google-plus","linkedin","envelope","stumbleupon","pinterest"], // all of the currently avalaible social buttons
     title: document.title, // your title, default is current page's title
     url: window.location.href,  // your url, default is current page's url
     text: "share with ", // the title of a tags
     description: $("meta[name='description']").attr("content"), // your description, default is current page's description
-    popup_width: 400, // the sharer popup's width, default is 400px
-    popup_height: 300 // the sharer popup's width, default is 300px
+    popup_width: 400, // the sharer popup width, default is 400px
+    popup_height: 300 // the sharer popup height, default is 300px
 });
 ```
 
