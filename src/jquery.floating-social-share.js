@@ -1,7 +1,6 @@
 /*!
- * jQuery Floating Social Share Plugin v1.0.1
+ * jQuery Floating Social Share Plugin v1.0.2
  * http://burakozdemir.co.uk
- *
  * Copyright 2015 Burak Özdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
  */
@@ -141,9 +140,8 @@
                 $.get('https://graph.facebook.com/'+url, function(data){
                     if(data.shares && data.shares > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
-                        $shareCount.append(shorten(data.shares)); // probably didn't get here so we will update it
+                        $shareCount.append(shorten(data.shares));
                         $component.append($shareCount);
-                        // had been shared before, then remove the margin top
                         $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
@@ -152,9 +150,8 @@
                 $.get('https://urls.api.twitter.com/1/urls/count.json?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
-                        $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
+                        $shareCount.append(shorten(data.count));
                         $component.append($shareCount);
-                        // had been shared before, then remove the margin top
                         $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
@@ -163,9 +160,8 @@
                 $.get('https://www.linkedin.com/countserv/count/share?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
-                        $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
+                        $shareCount.append(shorten(data.count));
                         $component.append($shareCount);
-                        // had been shared before, then remove the margin top
                         $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
@@ -174,9 +170,8 @@
                 $.get('https://api.pinterest.com/v1/urls/count.json?url='+url+'&callback=?', function(data){
                     if(data.count && data.count > 0){
                         var $shareCount = $("<span>", {class: "shareCount"});
-                        $shareCount.append(shorten(data.count)); // probably didn't get here so we will update it
+                        $shareCount.append(shorten(data.count));
                         $component.append($shareCount);
-                        // had been shared before, then remove the margin top
                         $component.find("i").removeClass("m-top5");
                     }
                 },'jsonp');
@@ -189,12 +184,11 @@
                 window.services.gplus.cb = function (number) {
                     window.gplusShares = number
                 };
-                $.getScript('http://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
+                $.getScript('https://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
                     if(window.gplusShares > 0) {
                         var $shareCount = $("<span>", {class: "shareCount"});
-                        $shareCount.append(shorten(window.gplusShares)); // probably didn't get here so we will update it
+                        $shareCount.append(shorten(window.gplusShares));
                         $component.append($shareCount);
-                        // had been shared before, then remove the margin top
                         $component.find("i").removeClass("m-top5");
                     }
                 });
