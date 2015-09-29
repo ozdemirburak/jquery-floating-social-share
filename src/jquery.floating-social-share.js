@@ -5,7 +5,7 @@
  * Released under the MIT license
  */
 
-;(function ( $, window, document, undefined ) {
+;(function($, window, document, undefined) {
 
     var pluginName = "floatingSocialShare",
         defaults = {
@@ -29,7 +29,7 @@
     }
 
     $.extend(Plugin.prototype, {
-        init: function () {
+        init: function() {
 
             if ($.inArray(this.settings.place, places) == -1)
                 this.settings.place = this._defaults.place;
@@ -39,7 +39,7 @@
                 $child = $("<div>", { class: this.settings.place }).appendTo($template);
 
             $.each(this.settings.buttons, function(index, value) {
-                $.each(networks, function( k, v ) {
+                $.each(networks, function(k, v) {
                     if (value === k) {
                         var $icon = $("<i>", {class: "m-top5 fa fa-" + value + ""}),
                             _href = v.url.replace('{url}', base.settings.url).replace('{title}', base.settings.title).replace('{description}', base.settings.description),
@@ -145,10 +145,10 @@
                     window.services = {};
                     window.services.gplus = {}
                 }
-                window.services.gplus.cb = function (number) {
+                window.services.gplus.cb = function(number) {
                     window.gplusShares = number
                 };
-                $.getScript('https://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function () {
+                $.getScript('https://share.yandex.ru/gpp.xml?url=' + url+'&callback=?', function() {
                     appendButtons(window.gplusShares, $component);
                 });
                 break;
@@ -157,7 +157,7 @@
         }
     }
 
-    $.fn[ pluginName ] = function (options) {
+    $.fn[pluginName] = function(options) {
         this.each(function() {
             if (!$.data(this, "plugin_" + pluginName))
                 $.data(this, "plugin_" + pluginName, new Plugin(this, options));
