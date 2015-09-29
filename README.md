@@ -13,9 +13,9 @@ Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-f
 
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="./dist/css/jquery.floating-social-share.min.css" />
+<link rel="stylesheet" type="text/css" href="dist/jquery.floating-social-share.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="./dist/js/jquery.floating-social-share.min.js"></script>
+<script type="text/javascript" src="dist/jquery.floating-social-share.min.js"></script>
 ```
 
 Finally, call the `floatingSocialShare` method on body with your custom options.
