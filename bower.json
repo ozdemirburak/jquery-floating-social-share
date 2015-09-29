@@ -1,13 +1,13 @@
 {
   "name": "jquery-floating-social-share",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "http://github.com/ozdemirburak/jquery-floating-social-share",
   "authors": [
     "Burak Ozdemir <https://github.com/ozdemirburak>"
   ],
   "main": [
-	"./dist/js/jquery.floating-social-share.min.js",
-    "./dist/css/jquery.floating-social-share.min.css"
+	"dist/js/jquery.floating-social-share.min.js",
+    "dist/css/jquery.floating-social-share.min.css"
   ],
   "moduleType": [
     "globals"
