@@ -20,7 +20,7 @@
             popup_height: 300
         };
 
-    function Plugin ( element, options ) {
+    function Plugin (element, options) {
         this.element = element;
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
@@ -31,19 +31,19 @@
     $.extend(Plugin.prototype, {
         init: function () {
 
-            var base = this;
             if ($.inArray(this.settings.place, places) == -1)
                 this.settings.place = this._defaults.place;
 
-            var $template = $("<div>", { id: "floatingSocialShare" }),
+            var base = this,
+                $template = $("<div>", { id: "floatingSocialShare" }),
                 $child = $("<div>", { class: this.settings.place }).appendTo($template);
 
-            $.each(this.settings.buttons, function( index, value ){
+            $.each(this.settings.buttons, function(index, value) {
                 $.each(networks, function( k, v ) {
                     if (value === k) {
                         var $icon = $("<i>", {class: "m-top5 fa fa-" + value + ""}),
                             _href = v.url.replace('{url}', base.settings.url).replace('{title}', base.settings.title).replace('{description}', base.settings.description),
-                            $component = $("<a>", { title: base.settings.title, class: ""+v.className+" pop-upper"}).attr("href", _href).attr("title", base.settings.text + value).append($icon);
+                            $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", base.settings.text + value).append($icon);
                         if(base.settings.counter === true)
                             setShareCount(value, base.settings.url, $component);
                         $child.append($component);
@@ -85,8 +85,8 @@
     function openPopUp(url, title, width, height) {
         var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
             h = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
-            left = ((w / 2) - (width / 2)) +  10,
-            top = ((h / 2) - (height / 2)) +  50;
+            left = (w / 2) - (width / 2) +  10,
+            top  = (h / 2) - (height / 2) +  50;
         window.open(url, title, 'scrollbars=yes, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left).focus();
     }
 
@@ -101,7 +101,7 @@
             return num;
     }
 
-    function setMobileCss(objects){
+    function setMobileCss(objects) {
         var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
         $.each(objects, function(){
             if(w < 961)
@@ -121,7 +121,7 @@
         url = encodeURI(url);
         switch(network) {
             case "facebook":
-                $.get('https://graph.facebook.com/'+url, function(data){
+                $.get('https://graph.facebook.com/'+url, function(data) {
                     appendButtons(data.shares, $component);
                 },'jsonp');
                 break;
@@ -157,8 +157,7 @@
         }
     }
 
-
-    $.fn[ pluginName ] = function ( options ) {
+    $.fn[ pluginName ] = function (options) {
         this.each(function() {
             if (!$.data(this, "plugin_" + pluginName))
                 $.data(this, "plugin_" + pluginName, new Plugin(this, options));
@@ -166,4 +165,4 @@
         return this;
     };
 
-})( jQuery, window, document );
+})(jQuery, window, document);
