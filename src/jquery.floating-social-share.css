@@ -1,5 +1,5 @@
 /*!
- * jQuery Floating Social Share CSS v1.0.3
+ * jQuery Floating Social Share Plugin v1.1.0
  * http://burakozdemir.co.uk
  * Copyright 2015 Burak Özdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
@@ -84,17 +84,33 @@
     background-color: #eb4924;
 }
 
+#floatingSocialShare .reddit{
+    background-color: #a9bacb;
+}
+
+#floatingSocialShare .tumblr{
+    background-color: #36465d;
+}
+
+#floatingSocialShare .vk{
+    background-color: #6383a8;
+}
+
+#floatingSocialShare .odnoklassniki {
+    background-color: #f6900b;
+}
+
 #floatingSocialShare .shareCount{
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    color: #dddddd;
+    color: #ffffff;
     font-size:  10px;
 }
 
-#floatingSocialShare .m-top5{
+#floatingSocialShare .margin-top-5{
     margin-top: 5px;
 }
 
