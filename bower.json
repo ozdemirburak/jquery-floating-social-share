@@ -28,7 +28,7 @@
     "test",
     "tests"
   ],
-  "description": "social media sharer buttons with counters, works with font-awesome",
+  "description": "social media share buttons with counters",
   "dependencies": {
     "jquery": "~1.11.1",
     "font-awesome": "~4.4.0"
