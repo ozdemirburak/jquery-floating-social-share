@@ -1,7 +1,7 @@
 jQuery Floating Social Share
 ================================
 
-Simple jQuery floating social media sharer plugin works with Font-Awesome. Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest and Google Plus with counter feature, StumbleUpon and Email without counter feature.
+Simple jQuery floating social media sharer plugin works with Font-Awesome. Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest, Google Plus, Reddit, Tumblr, VK and Odnoklassniki with counter feature, StumbleUpon and Email without counter feature.
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 ```html
 <script>
 	$("body").floatingSocialShare({
- 		buttons: ["facebook","twitter","google-plus"],
+ 		buttons: ["facebook", "twitter", "google-plus"],
         text: "share with: "
 	});
 </script>
@@ -35,7 +35,7 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
-* **buttons**: `Array` *(`["facebook", "twitter", "google-plus", "linkedin"]` by default)* Sets the social buttons for sharing. Available ones are `facebook`, `twitter`, `google-plus`, `linkedin`, `envelope`, `pinterest` and `stumbleupon`
+* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `tumblr`, `twitter` and `vk`  
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `String` *(`share with` by default)* Sets the share title for the social buttons.
@@ -48,12 +48,12 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 ```javascript
 $("body").floatingSocialShare({
 	place: "top-left", // alternatively top-right
-    counter: true, // set to false for hiding the counters of pinterest, facebook, twitter, linkedin and google-plus
-    buttons: ["facebook","twitter","google-plus","linkedin","envelope","stumbleupon","pinterest"], // all of the currently avalaible social buttons
+    counter: true, // set to false for hiding the counters of buttons
+    buttons: ["envelope", "facebook", "google-plus", "linkedin", "odnoklassniki", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"], // all of the currently avalaible social buttons
     title: document.title, // your title, default is current page's title
     url: window.location.href,  // your url, default is current page's url
     text: "share with ", // the title of a tags
-    description: $("meta[name='description']").attr("content"), // your description, default is current page's description
+    description: $('meta[name="description"]').attr("content"), // your description, default is current page's description
     popup_width: 400, // the sharer popup width, default is 400px
     popup_height: 300 // the sharer popup height, default is 300px
 });
