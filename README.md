@@ -43,7 +43,7 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `String` *(`share with` by default)* Sets the share title for the social buttons.
-* **description**: `String` *(`window.location.href` by default)* Sets the description for the share.
+* **description**: `String` *(`$('meta[name="description"]').attr("content")` by default)* Sets the description for the share.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
 
