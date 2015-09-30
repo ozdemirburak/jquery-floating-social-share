@@ -1,0 +1,29 @@
+{
+  "name": "jquery-floating-social-share",
+  "version": "1.1.0",
+  "description": "social media share buttons with counters",
+  "main": [
+    "dist/jquery-floating-social-share.min.js",
+    "dist/jquery-floating-social-share.min.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ozdemirburak/jquery-floating-share-plugin.git"
+  },
+  "devDependencies": {
+    "jquery": "~1.11.1",
+    "font-awesome": "~4.4.0"
+  },
+  "keywords": [
+    "social",
+    "share",
+    "sharer",
+    "buttons",
+    "counter"
+  ],
+  "author": "Burak Özdemir <burakozdemir@protonmail.ch> (http://burakozdemir.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ozdemirburak/jquery-floating-share-plugin/issues"
+  }
+}
