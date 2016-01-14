@@ -44,6 +44,7 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `String` *(`share with` by default)* Sets the share title for the social buttons.
 * **description**: `String` *(`$('meta[name="description"]').attr("content")` by default)* Sets the description for the share.
+* **media**: `String` *(`$('meta[property="og:image"]').attr("content")` by default)* Sets the media for the Pinterest share.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
 
@@ -58,6 +59,7 @@ $("body").floatingSocialShare({
     url: window.location.href,  // your url, default is current page's url
     text: "share with ", // the title of a tags
     description: $('meta[name="description"]').attr("content"), // your description, default is current page's description
+    media: $('meta[property="og:image"]').attr("content"), // pinterest media
     popup_width: 400, // the sharer popup width, default is 400px
     popup_height: 300 // the sharer popup height, default is 300px
 });

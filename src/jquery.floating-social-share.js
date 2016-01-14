@@ -1,7 +1,7 @@
 /*!
- * jQuery Floating Social Share Plugin v1.1.0
+ * jQuery Floating Social Share Plugin v1.1.1
  * http://burakozdemir.co.uk
- * Copyright 2015 Burak Özdemir - <https://github.com/ozdemirburak>
+ * Burak Ozdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
  */
 
@@ -16,8 +16,9 @@
             buttons: ["facebook", "twitter", "google-plus"],
             title: document.title,
             url: window.location.href,
+            description: $('meta[name="description"]').attr("content") || "",
+            media: $('meta[property="og:image"]').attr("content") || "",
             text: "share with ",
-            description: $('meta[name="description"]').attr("content"),
             popup_width: 400,
             popup_height: 300
         };
@@ -44,7 +45,10 @@
                 $.each(networks, function(k, v) {
                     if (value === k) {
                         var $icon = $("<i>", { class: "margin-top-5 fa fa-" + value }),
-                            _href = v.url.replace('{url}', base.settings.url).replace('{title}', base.settings.title).replace('{description}', base.settings.description),
+                            _href = v.url.replace('{url}', base.settings.url)
+                                         .replace('{title}', base.settings.title)
+                                         .replace('{description}', base.settings.description)
+                                         .replace('{media}', base.settings.media),
                             $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", base.settings.text + value).append($icon);
                         if(base.settings.counter === true)
                             setShareCount(value, encodeURI(base.settings.url), $component);
@@ -97,7 +101,7 @@
             },
             "pinterest":  {
                 className: "pinterest",
-                url: "https://pinterest.com/pin/create%2Fbutton/?url={url}&description={description}"
+                url: "https://pinterest.com/pin/create%2Fbutton/?url={url}&description={description}&media={media}"
             },
             "reddit": {
                 className: "reddit",
