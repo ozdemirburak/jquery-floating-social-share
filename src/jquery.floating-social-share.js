@@ -77,7 +77,7 @@
 
     });
 
-    var places = ["top-left", "top-right"],
+    var places = ["content-left", "top-left", "top-right"],
         networks = {
             "envelope":  {
                 className: "envelope",
