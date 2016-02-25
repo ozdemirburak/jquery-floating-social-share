@@ -33,11 +33,23 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 </script>
 ```
 
+To make the social share buttons appear next to the specific content, instead of the body, reference with selector.
+
+```html
+<script>
+	$(".content").floatingSocialShare({
+ 		buttons: ["facebook", "twitter", "google-plus"],
+        text: "share with: ",
+        place: "content-left"
+	});
+</script>
+```
+
 #### [Live Demo](http://onlinealarmkur.com)
 
 ## Options
 
-* **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `top-left` and `top-right` are available.
+* **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
 * **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `tumblr`, `twitter` and `vk`  
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
@@ -52,7 +64,7 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 
 ```javascript
 $("body").floatingSocialShare({
-	place: "top-left", // alternatively top-right
+	place: "top-left", // alternatively content-left, top-right
     counter: true, // set to false for hiding the counters of buttons
     buttons: ["envelope", "facebook", "google-plus", "linkedin", "odnoklassniki", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"], // all of the currently avalaible social buttons
     title: document.title, // your title, default is current page's title
@@ -66,5 +78,5 @@ $("body").floatingSocialShare({
 ```
 
 ## License
-Copyright &copy; [Burak Özdemir](http://burakozdemir.co.uk)<br>
+Copyright &copy; [Burak Özdemir](https://burakozdemir.co.uk)<br>
 Licensed under the MIT license.

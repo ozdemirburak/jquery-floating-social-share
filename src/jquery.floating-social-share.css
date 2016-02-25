@@ -5,15 +5,15 @@
  * Released under the MIT license
  */
 
-*{
+* {
     box-sizing: border-box;
 }
 
-#floatingSocialShare{
+#floatingSocialShare {
     position: relative;
 }
 
-#floatingSocialShare a{
+#floatingSocialShare a {
     position: relative;
     width: 48px;
     height: 48px;
@@ -38,61 +38,66 @@
     outline: 0 none !important;
 }
 
-#floatingSocialShare i{
+#floatingSocialShare i {
     line-height: inherit;
     font-size: 24px;
     text-align: center;
 }
 
-#floatingSocialShare .top-left{
+#floatingSocialShare .top-left, #floatingSocialShare .top-right, #floatingSocialShare .content-left {
     position: fixed;
-    top: 20%;
-    left:0;
+    top: 25%;
 }
 
-#floatingSocialShare .top-right{
-    position: fixed;
-    top: 20%;
-    right:0;
+#floatingSocialShare .top-left {
+    left: 0;
 }
 
-#floatingSocialShare .facebook{
+#floatingSocialShare .top-right {
+    right: 0;
+}
+
+#floatingSocialShare .content-left {
+    margin: 0 0 0 -75px;
+}
+
+#floatingSocialShare .facebook {
     background-color: #3b5998;
 }
 
-#floatingSocialShare .twitter{
+#floatingSocialShare .twitter {
     background-color: #00aced;
 }
 
-#floatingSocialShare .google-plus{
+#floatingSocialShare .google-plus {
     background-color: #dd4b39;
 }
 
-#floatingSocialShare .linkedin{
+#floatingSocialShare .linkedin {
     background-color: #007bb6;
 }
 
-#floatingSocialShare .envelope{
+#floatingSocialShare .envelope {
     background-color: #726C6C;
 }
 
-#floatingSocialShare .pinterest{
+#floatingSocialShare .pinterest {
     background-color: #c92228;
 }
 
-#floatingSocialShare .stumbleupon{
+#floatingSocialShare .stumbleupon {
     background-color: #eb4924;
 }
 
-#floatingSocialShare .reddit{
+#floatingSocialShare .reddit {
     background-color: #a9bacb;
 }
 
-#floatingSocialShare .tumblr{
+#floatingSocialShare .tumblr {
     background-color: #36465d;
 }
 
-#floatingSocialShare .vk{
+#floatingSocialShare .vk {
     background-color: #6383a8;
 }
 
@@ -100,7 +105,7 @@
     background-color: #f6900b;
 }
 
-#floatingSocialShare .shareCount{
+#floatingSocialShare .shareCount {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -110,31 +115,27 @@
     font-size:  10px;
 }
 
-#floatingSocialShare .margin-top-5{
+#floatingSocialShare .margin-top-5 {
     margin-top: 5px;
 }
 
-@media only screen and (min-device-width: 0px) and (max-width:961px){
+@media only screen and (min-device-width: 0px) and (max-width:961px) {
 
-    #floatingSocialShare{
+    #floatingSocialShare {
         margin-top: 50px;
     }
 
-    #floatingSocialShare .top-left{
+    #floatingSocialShare .top-left, #floatingSocialShare .top-right, #floatingSocialShare .content-left {
         top: auto;
         bottom: 0;
+        margin: 0;
+        right: 0;
+        left: 0;
         width: 100%;
         z-index: 999;
     }
 
-    #floatingSocialShare .top-right{
-        top: auto;
-        bottom: 0;
-        width: 100%;
-        z-index: 999;
-    }
-
-    #floatingSocialShare a{
+    #floatingSocialShare a {
         position: relative;
         float: left;
         display:list-item;
@@ -147,5 +148,4 @@
         -o-transition-property: none;
         transition-property: none;
     }
-
 }
