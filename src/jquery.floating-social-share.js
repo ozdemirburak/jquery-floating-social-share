@@ -1,5 +1,5 @@
 /*!
- * jQuery Floating Social Share Plugin v1.1.1
+ * jQuery Floating Social Share Plugin v1.2.1
  * http://burakozdemir.co.uk
  * Burak Ozdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
@@ -13,6 +13,7 @@
         defaults = {
             place: "top-left",
             counter: true,
+            twitter_counter: false,
             buttons: ["facebook", "twitter", "google-plus"],
             title: document.title,
             url: window.location.href,
@@ -34,8 +35,9 @@
     $.extend(Plugin.prototype, {
         init: function() {
 
-            if ($.inArray(this.settings.place, places) == -1)
+            if ($.inArray(this.settings.place, places) == -1) {
                 this.settings.place = this._defaults.place;
+            }
 
             var base = this,
                 $template = $("<div>", { id: "floatingSocialShare" }),
@@ -50,8 +52,9 @@
                                          .replace('{description}', base.settings.description)
                                          .replace('{media}', base.settings.media),
                             $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", base.settings.text + value).append($icon);
-                        if(base.settings.counter === true)
-                            setShareCount(value, encodeURI(base.settings.url), $component);
+                        if (base.settings.counter === true) {
+                            setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter);
+                        }
                         $child.append($component);
                         return false;
                     }
@@ -60,17 +63,17 @@
 
             $template.appendTo(this.element);
 
-            var diss = $(this.element).find(".pop-upper");
+            var popup = $(this.element).find(".pop-upper");
 
-            diss.on("click",function(event) {
+            popup.on("click",function(event) {
                 event.preventDefault();
                 openPopUp($(this).attr("href"), $(this).attr("title"), base.settings.popup_width, base.settings.popup_height);
             });
 
-            setMobileCss(diss);
+            setMobileCss(popup);
 
             $(window).resize(function() {
-                setMobileCss(diss);
+                setMobileCss(popup);
             });
 
         }
@@ -160,7 +163,7 @@
         }
     }
 
-    function setShareCount(network, url, $component) {
+    function setShareCount(network, url, $component, twitter_counter) {
         switch(network) {
             case "facebook":
                 $.get('https://graph.facebook.com/'+ url, function(data) {
@@ -168,12 +171,9 @@
                 },'jsonp');
                 break;
             case "google-plus":
-                $.get('https://share.yandex.ru/gpp.xml?url='+ url +'&callback=?', function() {}, 'jsonp');
-                window.services = window.services || {};
-                window.services.gplus = window.services.gplus || {};
-                window.services.gplus.cb = function(count) {
+                $.get('https://share.yandex.ru/gpp.xml?url='+ url +'&callback=?', function(count) {
                     appendButtons(count, $component);
-                };
+                }, 'jsonp');
                 break;
             case "linkedin":
                 $.get('https://www.linkedin.com/countserv/count/share?url='+ url +'&callback=?', function(data) {
@@ -203,9 +203,11 @@
                 },'jsonp');
                 break;
             case "twitter":
-                $.get('https://urls.api.twitter.com/1/urls/count.json?url='+ url +'&callback=?', function(data) {
-                    appendButtons(data.count, $component);
-                },'jsonp');
+                if (twitter_counter == true) {
+                    $.get('https://opensharecount.com/count.json?url='+ url +'&callback=?', function(data) {
+                        appendButtons(data.count, $component);
+                    },'jsonp');
+                }
                 break;
             case "vk":
                 $.get('https://vk.com/share.php?act=count&index=1&url='+ url +'&callback=?', function() {},'jsonp');

@@ -16,7 +16,7 @@ Or install via npm and include from your `node_modules` folder
 Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and Font-Awesome and the plugin on a page.
 
 ```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="dist/jquery.floating-social-share.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="dist/jquery.floating-social-share.min.js"></script>
@@ -51,6 +51,7 @@ To make the social share buttons appear next to the specific content, instead of
 
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
+* **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to [Open Share Count](https://opensharecount.com/) since Twitter API does not provide counters without an API key.
 * **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `tumblr`, `twitter` and `vk`  
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
@@ -66,6 +67,7 @@ To make the social share buttons appear next to the specific content, instead of
 $("body").floatingSocialShare({
 	place: "top-left", // alternatively content-left, top-right
     counter: true, // set to false for hiding the counters of buttons
+    twitter_counter: false, // Twitter API does not provide counters without API key, register to https://opensharecount.com/
     buttons: ["envelope", "facebook", "google-plus", "linkedin", "odnoklassniki", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"], // all of the currently avalaible social buttons
     title: document.title, // your title, default is current page's title
     url: window.location.href,  // your url, default is current page's url
