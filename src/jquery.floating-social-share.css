@@ -1,13 +1,9 @@
 /*!
- * jQuery Floating Social Share Plugin v1.2.1
+ * jQuery Floating Social Share Plugin v1.2.2
  * http://burakozdemir.co.uk
  * Burak Ozdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
  */
-
-* {
-    box-sizing: border-box;
-}
 
 #floatingSocialShare {
     position: relative;
@@ -15,12 +11,12 @@
 
 #floatingSocialShare a {
     position: relative;
-    width: 48px;
-    height: 48px;
-    line-height: 24px;
+    width: 45px;
+    height: 30px;
+    line-height: 20px;
+    padding: 8px 0;
     display:list-item;
     list-style-type: none;
-    padding: 5px 0;
     text-align: center;
     color: #fff;
 }
