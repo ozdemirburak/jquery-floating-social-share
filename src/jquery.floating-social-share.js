@@ -1,5 +1,5 @@
 /*!
- * jQuery Floating Social Share Plugin v1.2.2
+ * jQuery Floating Social Share Plugin v1.3.0
  * http://burakozdemir.co.uk
  * Burak Ozdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
