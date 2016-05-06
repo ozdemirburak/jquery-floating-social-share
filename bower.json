@@ -1,6 +1,6 @@
 {
   "name": "jquery-floating-social-share",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "http://github.com/ozdemirburak/jquery-floating-social-share",
   "authors": [
     "Burak Ozdemir <https://github.com/ozdemirburak>"
@@ -30,7 +30,7 @@
   ],
   "description": "social media share buttons with counters",
   "dependencies": {
-    "jquery": "~1.11.1",
-    "font-awesome": "~4.4.0"
+    "jquery": ">=1.8",
+    "font-awesome": ">=4.0"
   }
 }
