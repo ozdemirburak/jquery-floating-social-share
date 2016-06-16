@@ -2,10 +2,7 @@
   "name": "jquery-floating-social-share",
   "version": "1.3.0",
   "description": "social media share buttons with counters",
-  "main": [
-    "dist/jquery-floating-social-share.min.js",
-    "dist/jquery-floating-social-share.min.css"
-  ],
+  "main": "dist/jquery-floating-social-share.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ozdemirburak/jquery-floating-share-plugin.git"
