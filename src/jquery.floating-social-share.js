@@ -164,7 +164,7 @@
         switch(network) {
             case "facebook":
                 $.get('https://graph.facebook.com/'+ url, function(data) {
-                    appendButtons(data.shares, $component);
+                    appendButtons(data.share.share_count, $component);
                 },'jsonp');
                 break;
             case "google-plus":
