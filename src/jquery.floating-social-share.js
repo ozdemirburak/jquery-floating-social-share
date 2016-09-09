@@ -1,6 +1,6 @@
 /*!
- * jQuery Floating Social Share Plugin v1.3.0
- * http://burakozdemir.co.uk
+ * jQuery Floating Social Share Plugin v1.3.1
+ * https://burakozdemir.co.uk
  * Burak Ozdemir - <https://github.com/ozdemirburak>
  * Released under the MIT license
  */
@@ -167,7 +167,7 @@
         switch(network) {
             case "facebook":
                 $.get('https://graph.facebook.com/'+ url, function(data) {
-                    appendButtons(data.shares, $component);
+                    appendButtons(data.share.share_count, $component);
                 },'jsonp');
                 break;
             case "google-plus":
