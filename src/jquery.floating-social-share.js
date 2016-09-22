@@ -1,10 +1,3 @@
-/*!
- * jQuery Floating Social Share Plugin v1.3.1
- * https://burakozdemir.co.uk
- * Burak Ozdemir - <https://github.com/ozdemirburak>
- * Released under the MIT license
- */
-
 ;(function($, window, document, undefined) {
 
     "use strict";
@@ -194,7 +187,7 @@
                 break;
             case "reddit":
                 $.get('https://www.reddit.com/api/info.json?url='+ url +'&jsonp=?', function(response) {
-                    appendButtons(response.data.children[0].data.score, $component);
+                    appendButtons(response.data.children.length > 0 ? response.data.children[0].data.score : 0, $component);
                 },'jsonp');
                 break;
             case "tumblr":
