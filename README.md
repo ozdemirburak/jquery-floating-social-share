@@ -1,6 +1,8 @@
 jQuery Floating Social Share
 ================================
 
+[![npm][npm-image]][npm-url] [![downloads][downloads-image]][npm-url]
+
 Simple jQuery floating social media sharer plugin works with Font-Awesome. Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest, Google Plus, Reddit, Tumblr, VK and Odnoklassniki with counter feature, StumbleUpon and Email without counter feature.
 
 ## Getting Started
@@ -79,6 +81,17 @@ $("body").floatingSocialShare({
 });
 ```
 
-## License
-Copyright &copy; [Burak Özdemir](https://burakozdemir.co.uk)<br>
-Licensed under the MIT license.
+## Generating Minified Files
+
+Install node and npm following one of the techniques explained within 
+this [link](https://gist.github.com/isaacs/579814) and run the commands below.
+
+``` bash
+$ npm install --global gulp-cli
+$ npm install
+$ gulp
+```
+
+[downloads-image]: https://img.shields.io/npm/dm/jquery-floating-social-share.svg
+[npm-image]: https://img.shields.io/npm/v/jquery-floating-social-share.svg
+[npm-url]: https://www.npmjs.com/package/jquery-floating-social-share
