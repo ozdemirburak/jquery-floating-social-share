@@ -6,8 +6,8 @@
     "Burak Ozdemir <https://github.com/ozdemirburak>"
   ],
   "main": [
-	"dist/js/jquery.floating-social-share.min.js",
-    "dist/css/jquery.floating-social-share.min.css"
+    "src/js/jquery.floating-social-share.js",
+    "src/css/jquery.floating-social-share.css"
   ],
   "moduleType": [
     "globals"
