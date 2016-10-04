@@ -40,10 +40,10 @@
                 $.each(networks, function(k, v) {
                     if (value === k) {
                         var $icon = $("<i>", { class: "margin-top-5 fa fa-" + value }),
-                            _href = v.url.replace('{url}', base.settings.url)
-                                         .replace('{title}', base.settings.title)
-                                         .replace('{description}', base.settings.description)
-                                         .replace('{media}', base.settings.media),
+                            _href = v.url.replace('{url}', encodeURIComponent(base.settings.url))
+                                         .replace('{title}', encodeURIComponent(base.settings.title))
+                                         .replace('{description}', encodeURIComponent(base.settings.description))
+                                         .replace('{media}', encodeURIComponent(base.settings.media)),
                             $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", base.settings.text + value).append($icon);
                         if (base.settings.counter === true) {
                             setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter);
