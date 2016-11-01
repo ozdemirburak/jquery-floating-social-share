@@ -68,7 +68,7 @@ To make the social share buttons appear next to the specific content, instead of
 
 ```javascript
 $("body").floatingSocialShare({
-	place: "top-left", // alternatively content-left, top-right
+	place: "top-left", // alternatively content-left, content-right, top-right
     counter: true, // set to false for hiding the counters of buttons
     twitter_counter: false, // Twitter API does not provide counters without API key, register to https://opensharecount.com/
     buttons: ["envelope", "facebook", "google-plus", "linkedin", "odnoklassniki", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"], // all of the currently avalaible social buttons
