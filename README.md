@@ -51,7 +51,7 @@ To make the social share buttons appear next to the specific content, instead of
 
 ## Options
 
-* **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `top-left` and `top-right` are available.
+* **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `content-right`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
 * **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to [Open Share Count](https://opensharecount.com/) since Twitter API does not provide counters without an API key.
 * **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `tumblr`, `twitter` and `vk`  
@@ -62,6 +62,7 @@ To make the social share buttons appear next to the specific content, instead of
 * **media**: `String` *(`$('meta[property="og:image"]').attr("content")` by default)* Sets the media for the Pinterest share.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
+* **extra_offset**: `Number` *(`15` by default)* Adds an extra offset for `margin-left` if the selected place is `content-right` or `content-left`.
 
 ## Full Example
 

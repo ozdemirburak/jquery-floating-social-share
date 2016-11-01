@@ -14,7 +14,8 @@
             media: $('meta[property="og:image"]').attr("content") || "",
             text: "share with ",
             popup_width: 400,
-            popup_height: 300
+            popup_height: 300,
+            extra_offset: 15
         };
 
     function Plugin (element, options) {
@@ -58,22 +59,24 @@
 
             var popup = $(this.element).find(".pop-upper");
 
-            popup.on("click",function(event) {
+            popup.on("click", function(event) {
                 event.preventDefault();
                 openPopUp($(this).attr("href"), $(this).attr("title"), base.settings.popup_width, base.settings.popup_height);
             });
 
             setMobileCss(popup);
+            checkPlacePosition($child, base.settings.place, base.element, base.settings.extra_offset);
 
             $(window).resize(function() {
                 setMobileCss(popup);
+                checkPlacePosition($child, base.settings.place, base.element, base.settings.extra_offset);
             });
 
         }
 
     });
 
-    var places = ["content-left", "top-left", "top-right"],
+    var places = ["content-left", "content-right", "top-left", "top-right"],
         networks = {
             "envelope":  {
                 className: "envelope",
@@ -130,24 +133,39 @@
     }
 
     function shorten(num) {
-        if (num >= 1000000000)
+        if (num >= 1000000000) {
             return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
-        else if (num >= 1000000)
+        } else if (num >= 1000000) {
             return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-        else if (num >= 1000)
+        } else if (num >= 1000) {
             return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-        else
+        } else {
             return num;
+        }
     }
 
     function setMobileCss(objects) {
-        var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-        $.each(objects, function(){
-            if(w < 961)
+        var width = getWidth();
+        $.each(objects, function() {
+            if(width < 961) {
                 $(this).css("width", 100 / objects.length + "%");
-            else
+            } else {
                 $(this).removeAttr("style");
+            }
         });
+    }
+
+    function checkPlacePosition($child, position, element, extraOffset) {
+        if (getWidth() > 961 && $.inArray(position, ['content-right', 'content-left']) != -1) {
+            var initialOffset = position === 'content-right' ? element.offsetWidth : -75;
+            $child.css("margin-left", initialOffset + extraOffset);
+        } else {
+            $child.css("margin-left", 0);
+        }
+    }
+
+    function getWidth() {
+        return window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
     }
 
     function appendButtons(count, $component) {
@@ -174,7 +192,7 @@
                 },'jsonp');
                 break;
             case "odnoklassniki":
-                $.get('https://connect.ok.ru/dk?st.cmd=extLike&ref='+ url +'&callback=?', function() {},'jsonp');
+                $.get('https://connect.ok.ru/dk?st.cmd=extLike&ref='+ url +'&callback=?', function() {}, 'jsonp');
                 window.ODKL = window.ODKL || {};
                 window.ODKL.updateCount = function(index, count) {
                     appendButtons(count, $component);
@@ -217,8 +235,9 @@
 
     $.fn[pluginName] = function(options) {
         return this.each(function() {
-            if (!$.data(this, "plugin_" + pluginName))
+            if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+            }
         });
     };
 
