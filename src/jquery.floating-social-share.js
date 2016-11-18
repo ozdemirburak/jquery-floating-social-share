@@ -179,16 +179,26 @@
     }
 
     function appendButtons(count, $component) {
-        if(count && count > 0) {
+        if (count && count > 0) {
             $component.append($("<span>", { class: "shareCount" }).append(shorten(count))).find("i").removeClass("margin-top-5");
         }
+    }
+
+    function issetOrZero(fn) {
+        var value;
+        try {
+            value = fn();
+        } catch (e) {
+            value = 0;
+        }
+        return value;
     }
 
     function setShareCount(network, url, $component, twitter_counter) {
         switch(network) {
             case "facebook":
                 $.getJSON('https://graph.facebook.com/?id=' + url + '&callback=?', function(data) {
-                    appendButtons(data.share.share_count, $component);
+                    appendButtons(issetOrZero(function () { return data.share.share_count; }), $component);
                 });
                 break;
             case "google-plus":
@@ -198,7 +208,7 @@
                 break;
             case "linkedin":
                 $.getJSON('https://www.linkedin.com/countserv/count/share?url=' + url + '&callback=?', function(data) {
-                    appendButtons(data.count, $component);
+                    appendButtons(issetOrZero(function () { return data.count; }), $component);
                 });
                 break;
             case "odnoklassniki":
@@ -210,23 +220,23 @@
                 break;
             case "pinterest":
                 $.getJSON('https://api.pinterest.com/v1/urls/count.json?url=' + url + '&callback=?', function(data) {
-                    appendButtons(data.count, $component);
+                    appendButtons(issetOrZero(function () { return data.count; }), $component);
                 });
                 break;
             case "reddit":
                 $.getJSON('https://www.reddit.com/api/info.json?url=' + url + '&jsonp=?', function(response) {
-                    appendButtons(response.data.children.length > 0 ? response.data.children[0].data.score : 0, $component);
+                    appendButtons(issetOrZero(function () { return response.data.children[0].data.score; }), $component);
                 });
                 break;
             case "tumblr":
                 $.getJSON('https://api.tumblr.com/v2/share/stats?url=' + url + '&callback=?', function(data) {
-                    appendButtons(data.response.note_count, $component);
+                    appendButtons(issetOrZero(function () { return data.response.note_count; }), $component);
                 });
                 break;
             case "twitter":
                 if (twitter_counter == true) {
                     $.getJSON('https://opensharecount.com/count.json?url=' + url + '&callback=?', function(data) {
-                        appendButtons(data.count, $component);
+                        appendButtons(issetOrZero(function () { return data.count; }), $component);
                     });
                 }
                 break;
