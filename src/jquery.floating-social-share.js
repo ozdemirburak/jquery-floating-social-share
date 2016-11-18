@@ -12,7 +12,8 @@
             url: window.location.href,
             description: $('meta[name="description"]').attr("content") || "",
             media: $('meta[property="og:image"]').attr("content") || "",
-            text: "share with ",
+            text: {'default': 'share with:'},
+            text_title_case: false,
             popup_width: 400,
             popup_height: 300,
             extra_offset: 15
@@ -35,7 +36,8 @@
 
             var base = this,
                 $template = $("<div>", { id: "floatingSocialShare" }),
-                $child = $("<div>", { class: this.settings.place }).appendTo($template);
+                $child = $("<div>", { class: this.settings.place }).appendTo($template),
+                _text_default = base.settings.text['default'] || base.settings.text;
 
             $.each(this.settings.buttons, function(index, value) {
                 $.each(networks, function(k, v) {
@@ -45,7 +47,9 @@
                                          .replace('{title}', encodeURIComponent(base.settings.title))
                                          .replace('{description}', encodeURIComponent(base.settings.description))
                                          .replace('{media}', encodeURIComponent(base.settings.media)),
-                            $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", base.settings.text + value).append($icon);
+                            _text_value = base.settings.text[value] || _text_default + value,
+                            _text_output = base.settings.text_title_case ? title_case(_text_value) : _text_value,
+                            $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", _text_output).append($icon);
                         if (base.settings.counter === true) {
                             setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter);
                         }
@@ -132,6 +136,12 @@
         window.open(url, title, 'scrollbars=yes, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left).focus();
     }
 
+    function title_case(str) {
+        return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+    }
+
     function shorten(num) {
         if (num >= 1000000000) {
             return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
@@ -147,7 +157,7 @@
     function setMobileCss(objects) {
         var width = getWidth();
         $.each(objects, function() {
-            if(width < 961) {
+            if (width < 961) {
                 $(this).css("width", 100 / objects.length + "%");
             } else {
                 $(this).removeAttr("style");
@@ -177,51 +187,51 @@
     function setShareCount(network, url, $component, twitter_counter) {
         switch(network) {
             case "facebook":
-                $.get('https://graph.facebook.com/'+ url, function(data) {
+                $.getJSON('https://graph.facebook.com/?id=' + url + '&callback=?', function(data) {
                     appendButtons(data.share.share_count, $component);
-                },'jsonp');
+                });
                 break;
             case "google-plus":
-                $.get('https://share.yandex.ru/gpp.xml?url='+ url +'&callback=?', function(count) {
+                $.getJSON('https://share.yandex.ru/gpp.xml?url=' + url + '&callback=?', function(count) {
                     appendButtons(count, $component);
-                }, 'jsonp');
+                });
                 break;
             case "linkedin":
-                $.get('https://www.linkedin.com/countserv/count/share?url='+ url +'&callback=?', function(data) {
+                $.getJSON('https://www.linkedin.com/countserv/count/share?url=' + url + '&callback=?', function(data) {
                     appendButtons(data.count, $component);
-                },'jsonp');
+                });
                 break;
             case "odnoklassniki":
-                $.get('https://connect.ok.ru/dk?st.cmd=extLike&ref='+ url +'&callback=?', function() {}, 'jsonp');
+                $.getJSON('https://connect.ok.ru/dk?st.cmd=extLike&ref=' + url + '&callback=?', function() {});
                 window.ODKL = window.ODKL || {};
                 window.ODKL.updateCount = function(index, count) {
                     appendButtons(count, $component);
                 }
                 break;
             case "pinterest":
-                $.get('https://api.pinterest.com/v1/urls/count.json?url='+ url +'&callback=?', function(data) {
+                $.getJSON('https://api.pinterest.com/v1/urls/count.json?url=' + url + '&callback=?', function(data) {
                     appendButtons(data.count, $component);
-                },'jsonp');
+                });
                 break;
             case "reddit":
-                $.get('https://www.reddit.com/api/info.json?url='+ url +'&jsonp=?', function(response) {
+                $.getJSON('https://www.reddit.com/api/info.json?url=' + url + '&jsonp=?', function(response) {
                     appendButtons(response.data.children.length > 0 ? response.data.children[0].data.score : 0, $component);
-                },'jsonp');
+                });
                 break;
             case "tumblr":
-                $.get('https://api.tumblr.com/v2/share/stats?url='+ url +'&callback=?', function(data) {
+                $.getJSON('https://api.tumblr.com/v2/share/stats?url=' + url + '&callback=?', function(data) {
                     appendButtons(data.response.note_count, $component);
-                },'jsonp');
+                });
                 break;
             case "twitter":
                 if (twitter_counter == true) {
-                    $.get('https://opensharecount.com/count.json?url='+ url +'&callback=?', function(data) {
+                    $.getJSON('https://opensharecount.com/count.json?url=' + url + '&callback=?', function(data) {
                         appendButtons(data.count, $component);
-                    },'jsonp');
+                    });
                 }
                 break;
             case "vk":
-                $.get('https://vk.com/share.php?act=count&index=1&url='+ url +'&callback=?', function() {},'jsonp');
+                $.getJSON('https://vk.com/share.php?act=count&index=1&url=' + url + '&callback=?', function() {});
                 window.VK = window.VK || {};
                 window.VK.Share = window.VK.Share || {};
                 window.VK.Share.count = function(index, count) {
