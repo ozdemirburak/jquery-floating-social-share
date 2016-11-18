@@ -21,9 +21,11 @@
 <script>
     $(".content").floatingSocialShare({
         buttons: ["facebook", "google-plus", "linkedin", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"],
-        text: "share with: ",
+        text: {'default': 'share with: ', 'facebook': 'share with facebook', 'google-plus': 'share with g+'},
+        text_title_case: true,
         place: "content-left",
-        url: "http://google.com"
+        url: "http://google.com",
+        twitter_counter: true
     });
 </script>
 </body>

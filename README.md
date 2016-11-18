@@ -18,7 +18,7 @@ Or install via npm and include from your `node_modules` folder
 Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and Font-Awesome and the plugin on a page.
 
 ```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="dist/jquery.floating-social-share.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="dist/jquery.floating-social-share.min.js"></script>
@@ -57,7 +57,8 @@ To make the social share buttons appear next to the specific content, instead of
 * **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `tumblr`, `twitter` and `vk`  
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
-* **text**: `String` *(`share with` by default)* Sets the share title for the social buttons.
+* **text**: `Object | String` *({'default': 'share with:'} by default)* Sets the share title for the social buttons. If properties are not assigned specifically, will use the default one appended with the button tag, for instance share with facebook.
+* **text_title_case**: `Boolean` *(`false` by default)* Converts share text to title case, for instance, share with facebook will become Share With Facebook when set to true
 * **description**: `String` *(`$('meta[name="description"]').attr("content")` by default)* Sets the description for the share.
 * **media**: `String` *(`$('meta[property="og:image"]').attr("content")` by default)* Sets the media for the Pinterest share.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
@@ -74,7 +75,8 @@ $("body").floatingSocialShare({
     buttons: ["envelope", "facebook", "google-plus", "linkedin", "odnoklassniki", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"], // all of the currently avalaible social buttons
     title: document.title, // your title, default is current page's title
     url: window.location.href,  // your url, default is current page's url
-    text: "share with ", // the title of a tags
+    text: {'default': 'share with ', 'facebook': 'share with facebook', 'google-plus': 'share with g+'}, // the title of tags
+    text_title_case: false, // if set true, then will convert share texts to title case like Share With G+
     description: $('meta[name="description"]').attr("content"), // your description, default is current page's description
     media: $('meta[property="og:image"]').attr("content"), // pinterest media
     popup_width: 400, // the sharer popup width, default is 400px
