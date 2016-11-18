@@ -120,7 +120,7 @@
             },
             "twitter": {
                 className: "twitter",
-                url:"https://twitter.com/home?status={url}"
+                url:"https://twitter.com/home?status={title} {url}"
             },
             "vk": {
                 className: "vk",
