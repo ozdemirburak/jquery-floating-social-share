@@ -44,6 +44,8 @@
 #floatingSocialShare .top-left, #floatingSocialShare .top-right, #floatingSocialShare .content-left, #floatingSocialShare .content-right {
     position: fixed;
     top: 25%;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 #floatingSocialShare .top-left {
@@ -56,6 +58,10 @@
 
 #floatingSocialShare .content-left, #floatingSocialShare .content-right {
     margin: 0;
+}
+
+#floatingSocialShare .top-right {
+    direction: rtl;
 }
 
 #floatingSocialShare .facebook {
