@@ -64,12 +64,12 @@
     direction: rtl;
 }
 
-#floatingSocialShare .facebook {
-    background-color: #3b5998;
+#floatingSocialShare .envelope {
+    background-color: #726C6C;
 }
 
-#floatingSocialShare .twitter {
-    background-color: #00aced;
+#floatingSocialShare .facebook {
+    background-color: #3b5998;
 }
 
 #floatingSocialShare .google-plus {
@@ -80,32 +80,40 @@
     background-color: #007bb6;
 }
 
-#floatingSocialShare .envelope {
-    background-color: #726C6C;
+#floatingSocialShare .odnoklassniki {
+    background-color: #f6900b;
 }
 
 #floatingSocialShare .pinterest {
     background-color: #c92228;
 }
 
+#floatingSocialShare .reddit {
+    background-color: #a9bacb;
+}
+
 #floatingSocialShare .stumbleupon {
     background-color: #eb4924;
 }
 
-#floatingSocialShare .reddit {
-    background-color: #a9bacb;
+#floatingSocialShare .telegram {
+    background-color: #1E96C8;
 }
 
 #floatingSocialShare .tumblr {
     background-color: #36465d;
 }
 
+#floatingSocialShare .twitter {
+    background-color: #00aced;
+}
+
 #floatingSocialShare .vk {
     background-color: #6383a8;
 }
 
-#floatingSocialShare .odnoklassniki {
-    background-color: #f6900b;
+#floatingSocialShare .whatsapp {
+    background-color: #00E676;
 }
 
 #floatingSocialShare .shareCount {
