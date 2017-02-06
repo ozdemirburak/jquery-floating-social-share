@@ -5,7 +5,7 @@
     <meta property="og:description" name="description" content="Floating Social Share Buttons">
     <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/d/d6/Hs-2009-25-e-full_jpg.jpg">
     <title>jQuery Floating Social Share</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../dist/jquery.floating-social-share.min.css" />
 </head>
 <body>
@@ -19,12 +19,15 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../dist/jquery.floating-social-share.min.js"></script>
 <script>
-    $("body").floatingSocialShare({
-        buttons: ["facebook", "google-plus", "linkedin", "pinterest", "reddit", "stumbleupon", "tumblr", "twitter", "vk"],
-        twitter_counter: true,
-        text: "share with: ",
-        url: "http://google.com"
-    });
+  $("body").floatingSocialShare({
+    buttons: [
+      "facebook", "google-plus", "linkedin", "pinterest", "reddit",
+      "stumbleupon", "telegram", "tumblr", "twitter", "vk", "whatsapp"
+    ],
+    twitter_counter: true,
+    text: "share with: ",
+    url: "http://google.com"
+  });
 </script>
 </body>
 </html>
