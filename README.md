@@ -57,11 +57,11 @@ To make the social share buttons appear next to the specific content, instead of
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `content-right`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
 * **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to [Open Share Count](https://opensharecount.com/) since Twitter API does not provide counters without an API key.
-* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `tumblr`, `twitter` and `vk`  
+* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `telegram`, `tumblr`, `twitter` `vk` and `whatsapp`. 
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `Object | String` *({'default': 'share with:'} by default)* Sets the share title for the social buttons. If properties are not assigned specifically, will use the default one appended with the button tag, for instance share with facebook.
-* **text_title_case**: `Boolean` *(`false` by default)* Converts share text to title case, for instance, share with facebook will become Share With Facebook when set to true
+* **text_title_case**: `Boolean` *(`false` by default)* Converts share text to title case, for instance, share with facebook will become Share With Facebook when set to true.
 * **description**: `String` *(`$('meta[name="description"]').attr("content")` by default)* Sets the description for the share.
 * **media**: `String` *(`$('meta[property="og:image"]').attr("content")` by default)* Sets the media for the Pinterest share.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
