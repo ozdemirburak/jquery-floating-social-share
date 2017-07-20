@@ -4,11 +4,11 @@ jQuery Floating Social Share
 [![npm][npm-image]][npm-url] [![downloads][downloads-image]][npm-url]
 
 Simple jQuery floating social media sharer plugin works with Font-Awesome. 
-Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest, Google Plus, 
-Reddit, Tumblr, VK and Odnoklassniki with counter feature, Email, StumbleUpon, Telegram, and Whatsapp 
+Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest,
+Reddit, Tumblr, VK and Odnoklassniki with counter feature, Google Plus, Email, StumbleUpon, Telegram, and Whatsapp
 without counter feature.
 
-You can check the plugin online on [Online Alarm Clock](http://onlinealarmkur.com/en/).
+You can check the plugin on [Online Alarm Clock](http://onlinealarmkur.com/en/).
 
 ## Getting Started
 

@@ -209,11 +209,6 @@
           appendButtons(issetOrZero(function () { return data.share.share_count; }), $component);
         });
         break;
-      case "google-plus":
-        $.getJSON('https://share.yandex.ru/gpp.xml?url=' + url + '&callback=?', function(count) {
-          appendButtons(count, $component);
-        });
-        break;
       case "linkedin":
         $.getJSON('https://www.linkedin.com/countserv/count/share?url=' + url + '&callback=?', function(data) {
           appendButtons(issetOrZero(function () { return data.count; }), $component);
