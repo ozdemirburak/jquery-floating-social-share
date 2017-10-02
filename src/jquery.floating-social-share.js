@@ -42,13 +42,14 @@
       $.each(this.settings.buttons, function(index, value) {
         $.each(networks, function(k, v) {
           if (value === k) {
-            var _href = v.url.replace('{url}', encodeURIComponent(base.settings.url))
+            var $icon = $(networks[value]['icon']),
+              _href = v.url.replace('{url}', encodeURIComponent(base.settings.url))
                 .replace('{title}', encodeURIComponent(base.settings.title))
                 .replace('{description}', encodeURIComponent(base.settings.description))
                 .replace('{media}', encodeURIComponent(base.settings.media)),
               _text_value = base.settings.text[value] || _text_default + value,
               _text_output = base.settings.text_title_case ? title_case(_text_value) : _text_value,
-              $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", _text_output);
+              $component = $("<a>", { title: base.settings.title, class: v.className + " pop-upper"}).attr("href", _href).attr("title", _text_output).append($icon);
             if (base.settings.counter === true) {
               setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter);
             }
