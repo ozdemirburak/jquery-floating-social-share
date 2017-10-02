@@ -3,9 +3,9 @@ jQuery Floating Social Share
 
 [![npm][npm-image]][npm-url] [![downloads][downloads-image]][npm-url]
 
-Simple jQuery floating social media sharer plugin works with Font-Awesome. 
+Simple jQuery floating social media sharer plugin. 
 Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest,
-Reddit, Tumblr, VK and Odnoklassniki with counter feature, Google Plus, Email, StumbleUpon, Telegram, and Whatsapp
+Reddit, Tumblr, VK and Odnoklassniki with counter feature, Google Plus, Mail, StumbleUpon, Telegram, and Whatsapp
 without counter feature.
 
 You can check the plugin on [Online Alarm Clock](http://onlinealarmkur.com/en/).
@@ -20,10 +20,9 @@ Or install via npm and include from your `node_modules` folder
 
 `npm install --save jquery-floating-social-share`
 
-Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and Font-Awesome and the plugin on a page.
+Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and the plugin on a page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="dist/jquery.floating-social-share.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="dist/jquery.floating-social-share.min.js"></script>
@@ -57,7 +56,7 @@ $(".content").floatingSocialShare({
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `content-right`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
 * **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to [Open Share Count](https://opensharecount.com/) since Twitter API does not provide counters without an API key.
-* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `envelope`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `telegram`, `tumblr`, `twitter` `vk` and `whatsapp`. 
+* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `mail`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `telegram`, `tumblr`, `twitter` `vk` and `whatsapp`. 
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `Object | String` *({'default': 'share with:'} by default)* Sets the share title for the social buttons. If properties are not assigned specifically, will use the default one appended with the button tag, for instance share with facebook.
@@ -67,6 +66,7 @@ $(".content").floatingSocialShare({
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
 * **extra_offset**: `Number` *(`15` by default)* Adds an extra offset for `margin-left` if the selected place is `content-right` or `content-left`.
+* **countOffset**: `Number` *(`8` by default)* Adds an extra height for the share count.
 
 ## Full Example
 
@@ -76,7 +76,7 @@ $("body").floatingSocialShare({
   counter: true, // set to false for hiding the counters of buttons
   twitter_counter: false, // Twitter API does not provide counters without API key, register to https://opensharecount.com/
   buttons: [ // all of the currently available social buttons
-    "envelope", "facebook", "google-plus", "linkedin", "odnoklassniki", 
+    "mail", "facebook", "google-plus", "linkedin", "odnoklassniki", 
     "pinterest", "reddit", "stumbleupon", "telegram", "tumblr", "twitter", 
     "vk", "whatsapp"
   ],

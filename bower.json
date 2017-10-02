@@ -1,6 +1,6 @@
 {
   "name": "jquery-floating-social-share",
-  "version": "1.8.2",
+  "version": "2.0.0",
   "homepage": "http://github.com/ozdemirburak/jquery-floating-social-share",
   "authors": [
     "Burak Ozdemir <https://github.com/ozdemirburak>"
@@ -13,11 +13,22 @@
     "globals"
   ],
   "keywords": [
-    "social",
-    "share",
-    "sharer",
-    "buttons",
-    "counter"
+    "share buttons",
+    "sharing buttons",
+    "social share",
+    "social media share",
+    "facebook",
+    "google plus",
+    "linkedin",
+    "odnoklassniki",
+    "pinterest",
+    "reddit",
+    "stumbleupon",
+    "telegram",
+    "tumblr",
+    "twitter",
+    "vk",
+    "whatsapp"
   ],
   "license": "MIT",
   "ignore": [
