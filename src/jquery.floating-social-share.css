@@ -22,9 +22,37 @@
     color: #fff;
 }
 
+#floatingSocialShare svg {
+    fill: #fff;
+    height: 30px;
+}
+
+#floatingSocialShare a.without-counter svg {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#floatingSocialShare .shareCount {
+    position: absolute;
+    top: 36px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    color: #ffffff;
+    font-size: 10px;
+}
+
 #floatingSocialShare a:focus, #floatingSocialShare a:hover {
     color: #fff;
-    width:52px;
+    width: 52px;
     opacity: 0.8;
     transition-duration: 0.3s;
     transition-property: right;
@@ -33,12 +61,6 @@
 
 #floatingSocialShare a, #floatingSocialShare a:visited, #floatingSocialShare a:focus, #floatingSocialShare a:active, #floatingSocialShare a:hover {
     outline: 0 none !important;
-}
-
-#floatingSocialShare i {
-    line-height: inherit;
-    font-size: 24px;
-    text-align: center;
 }
 
 #floatingSocialShare .top-left, #floatingSocialShare .top-right, #floatingSocialShare .content-left, #floatingSocialShare .content-right {
@@ -64,66 +86,56 @@
     direction: rtl;
 }
 
-#floatingSocialShare .envelope {
-    background-color: #726C6C;
+#floatingSocialShare .mail {
+    background-color: #D14836;
 }
 
 #floatingSocialShare .facebook {
-    background-color: #3b5998;
+    background-color: #3B5998;
 }
 
 #floatingSocialShare .google-plus {
-    background-color: #dd4b39;
+    background-color: #DC4E41;
 }
 
 #floatingSocialShare .linkedin {
-    background-color: #007bb6;
+    background-color: #0077B5;
 }
 
 #floatingSocialShare .odnoklassniki {
-    background-color: #f6900b;
+    background-color: #F4731C;
 }
 
 #floatingSocialShare .pinterest {
-    background-color: #c92228;
+    background-color: #BD081C;
 }
 
 #floatingSocialShare .reddit {
-    background-color: #a9bacb;
+    background-color: #FF4500;
 }
 
 #floatingSocialShare .stumbleupon {
-    background-color: #eb4924;
+    background-color: #EB4924;
 }
 
 #floatingSocialShare .telegram {
-    background-color: #1E96C8;
+    background-color: #2CA5E0;
 }
 
 #floatingSocialShare .tumblr {
-    background-color: #36465d;
+    background-color: #36465D;
 }
 
 #floatingSocialShare .twitter {
-    background-color: #00aced;
+    background-color: #1DA1F2;
 }
 
 #floatingSocialShare .vk {
-    background-color: #6383a8;
+    background-color: #6383A8;
 }
 
 #floatingSocialShare .whatsapp {
     background-color: #00E676;
-}
-
-#floatingSocialShare .shareCount {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    color: #ffffff;
-    font-size:  10px;
 }
 
 #floatingSocialShare .margin-top-5 {
@@ -151,6 +163,14 @@
         float: left;
         display:list-item;
         list-style-type: none;
+    }
+
+    #floatingSocialShare svg {
+        height: 24px;
+    }
+
+    #floatingSocialShare .shareCount {
+        top: 30px;
     }
 
     #floatingSocialShare a:focus, #floatingSocialShare a:hover {
