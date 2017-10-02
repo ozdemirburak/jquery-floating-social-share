@@ -3,8 +3,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglify');
 
-var src = 'src/',
-    dist = 'dist/';
+var src = 'src/', dist = 'dist/';
 
 gulp.task('minify-css', function() {
     return gulp.src(src + 'jquery.floating-social-share.css')
