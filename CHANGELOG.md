@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.1
+- Added `popup` option for opening links in popup or not.
+
 ## 2.0.0
 - Removed Font Awesome dependency, using simple icons as the SVG source
 - Renamed `envelope` to `mail`

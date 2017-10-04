@@ -14,6 +14,7 @@
       media: $('meta[property="og:image"]').attr("content") || "",
       text: {'default': 'share with:'},
       text_title_case: false,
+      popup: true,
       popup_width: 400,
       popup_height: 300,
       extra_offset: 15,
@@ -49,7 +50,7 @@
             .replace("{media}", encodeURIComponent(base.settings.media)),
           _text_value = base.settings.text[value] || _text_default + value,
           _text_output = base.settings.text_title_case ? title_case(_text_value) : _text_value,
-          $component = $("<a>", { title: base.settings.title, class: value + " pop-upper"}).attr("href", _href).attr("title", _text_output).append($icon).addClass('without-counter');
+          $component = $("<a>", { title: base.settings.title, class: value + " pop-upper"}).attr("href", _href).attr("title", _text_output).attr("target", "_blank").append($icon).addClass('without-counter');
         if (base.settings.counter === true) {
           setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter, base.settings.countOffset);
         }
@@ -58,18 +59,20 @@
 
       $template.appendTo(this.element);
 
-      var popup = $(this.element).find(".pop-upper");
+      var links = $(this.element).find(".pop-upper");
 
-      popup.on("click", function(event) {
-        event.preventDefault();
-        openPopUp($(this).attr("href"), $(this).attr("title"), base.settings.popup_width, base.settings.popup_height);
-      });
+      if (this.settings.popup === true) {
+        links.on("click", function(event) {
+          event.preventDefault();
+          openPopUp($(this).attr("href"), $(this).attr("title"), base.settings.popup_width, base.settings.popup_height);
+        });
+      }
 
-      setMobileCss(popup);
+      setMobileCss(links);
       checkPlacePosition($child, base.settings.place, base.element, base.settings.extra_offset);
 
       $(window).resize(function() {
-        setMobileCss(popup);
+        setMobileCss(links);
         checkPlacePosition($child, base.settings.place, base.element, base.settings.extra_offset);
         updateIsMobile();
       });
