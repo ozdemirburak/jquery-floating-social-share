@@ -55,7 +55,7 @@ $(".content").floatingSocialShare({
 
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `content-right`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
-* **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to [Open Share Count](https://opensharecount.com/) since Twitter API does not provide counters without an API key.
+* **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to Open Share Count since Twitter API does not provide counters without an API key.
 * **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `mail`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `telegram`, `tumblr`, `twitter` `vk` and `whatsapp`. 
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
@@ -63,6 +63,7 @@ $(".content").floatingSocialShare({
 * **text_title_case**: `Boolean` *(`false` by default)* Converts share text to title case, for instance, share with facebook will become Share With Facebook when set to true.
 * **description**: `String` *(`$('meta[name="description"]').attr("content")` by default)* Sets the description for the share.
 * **media**: `String` *(`$('meta[property="og:image"]').attr("content")` by default)* Sets the media for the Pinterest share.
+* **popup**: `Boolean` *(`true` by default)* Opens links in a popup when set true. When it is false, links are opened in a new tab.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
 * **extra_offset**: `Number` *(`15` by default)* Adds an extra offset for `margin-left` if the selected place is `content-right` or `content-left`.
@@ -90,6 +91,7 @@ $("body").floatingSocialShare({
   text_title_case: false, // if set true, then will convert share texts to title case like Share With G+
   description: $('meta[name="description"]').attr("content"), // your description, default is current page's description
   media: $('meta[property="og:image"]').attr("content"), // pinterest media
+  popup: true, // open links in popup
   popup_width: 400, // the sharer popup width, default is 400px
   popup_height: 300 // the sharer popup height, default is 300px
 });
