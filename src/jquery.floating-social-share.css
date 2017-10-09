@@ -1,178 +1,159 @@
 #floatingSocialShare {
-    position: relative;
+  position: relative;
 }
-
 #floatingSocialShare *,
 #floatingSocialShare *:before,
 #floatingSocialShare *:after {
-    -webkit-box-sizing: content-box !important;
-    -moz-box-sizing: content-box !important;
-    box-sizing: content-box !important;
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
 }
-
 #floatingSocialShare a {
-    position: relative;
-    width: 45px;
-    height: 30px;
-    line-height: 20px;
-    padding: 8px 0;
-    display:list-item;
-    list-style-type: none;
-    text-align: center;
-    color: #fff;
+  position: relative;
+  width: 45px;
+  height: 30px;
+  line-height: 20px;
+  padding: 8px 0;
+  display: list-item;
+  list-style-type: none;
+  text-align: center;
+  color: #FFFFFF;
+  outline: 0 none !important;
 }
-
+#floatingSocialShare a:focus,
+#floatingSocialShare a:hover {
+  color: #FFFFFF;
+  width: 52px;
+  opacity: 0.8;
+  transition-duration: 0.3s;
+  transition-property: right;
+  transition-timing-function: ease-out;
+}
+#floatingSocialShare a:focus,
+#floatingSocialShare a:hover,
+#floatingSocialShare a:visited,
+#floatingSocialShare a:active {
+  outline: 0 none !important;
+}
 #floatingSocialShare svg {
-    fill: #fff;
-    height: 30px;
+  fill: #FFFFFF;
+  height: 30px;
 }
-
 #floatingSocialShare a.without-counter svg {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
 }
-
 #floatingSocialShare .shareCount {
-    position: absolute;
-    top: 36px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    color: #ffffff;
-    font-size: 10px;
+  position: absolute;
+  top: 36px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  color: #FFFFFF;
+  font-size: 10px;
 }
-
-#floatingSocialShare a:focus, #floatingSocialShare a:hover {
-    color: #fff;
-    width: 52px;
-    opacity: 0.8;
-    transition-duration: 0.3s;
-    transition-property: right;
-    transition-timing-function: ease-out;
+#floatingSocialShare .top-left,
+#floatingSocialShare .top-right,
+#floatingSocialShare .content-left,
+#floatingSocialShare .content-right {
+  position: fixed;
+  top: 25%;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
-
-#floatingSocialShare a, #floatingSocialShare a:visited, #floatingSocialShare a:focus, #floatingSocialShare a:active, #floatingSocialShare a:hover {
-    outline: 0 none !important;
-}
-
-#floatingSocialShare .top-left, #floatingSocialShare .top-right, #floatingSocialShare .content-left, #floatingSocialShare .content-right {
-    position: fixed;
-    top: 25%;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-}
-
 #floatingSocialShare .top-left {
-    left: 0;
+  left: 0;
 }
-
 #floatingSocialShare .top-right {
-    right: 0;
+  right: 0;
+  direction: rtl;
 }
-
-#floatingSocialShare .content-left, #floatingSocialShare .content-right {
-    margin: 0;
+#floatingSocialShare .content-left {
+  margin: 0;
 }
-
-#floatingSocialShare .top-right {
-    direction: rtl;
+#floatingSocialShare .content-right {
+  margin: 0;
 }
-
 #floatingSocialShare .mail {
-    background-color: #D14836;
+  background-color: #D14836;
 }
-
 #floatingSocialShare .facebook {
-    background-color: #3B5998;
+  background-color: #3B5998;
 }
-
 #floatingSocialShare .google-plus {
-    background-color: #DC4E41;
+  background-color: #DC4E41;
 }
-
 #floatingSocialShare .linkedin {
-    background-color: #0077B5;
+  background-color: #0077B5;
 }
-
 #floatingSocialShare .odnoklassniki {
-    background-color: #F4731C;
+  background-color: #F4731C;
 }
-
 #floatingSocialShare .pinterest {
-    background-color: #BD081C;
+  background-color: #BD081C;
 }
-
 #floatingSocialShare .reddit {
-    background-color: #FF4500;
+  background-color: #FF4500;
 }
-
 #floatingSocialShare .stumbleupon {
-    background-color: #EB4924;
+  background-color: #EB4924;
 }
-
 #floatingSocialShare .telegram {
-    background-color: #2CA5E0;
+  background-color: #2CA5E0;
 }
-
 #floatingSocialShare .tumblr {
-    background-color: #36465D;
+  background-color: #36465D;
 }
-
 #floatingSocialShare .twitter {
-    background-color: #1DA1F2;
+  background-color: #1DA1F2;
 }
-
 #floatingSocialShare .vk {
-    background-color: #6383A8;
+  background-color: #6383A8;
 }
-
 #floatingSocialShare .whatsapp {
-    background-color: #00E676;
+  background-color: #00E676;
 }
-
-@media only screen and (min-device-width: 0px) and (max-width:961px) {
-
-    #floatingSocialShare {
-        margin-top: 50px;
-    }
-
-    #floatingSocialShare .top-left, #floatingSocialShare .top-right, #floatingSocialShare .content-left, #floatingSocialShare .content-right  {
-        top: auto;
-        bottom: 0;
-        margin: 0;
-        right: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-    }
-
-    #floatingSocialShare a {
-        position: relative;
-        float: left;
-        display:list-item;
-        list-style-type: none;
-    }
-
-    #floatingSocialShare svg {
-        height: 24px;
-    }
-
-    #floatingSocialShare .shareCount {
-        top: 30px;
-    }
-
-    #floatingSocialShare a:focus, #floatingSocialShare a:hover {
-        -moz-transition-property: none;
-        -webkit-transition-property: none;
-        -o-transition-property: none;
-        transition-property: none;
-    }
+@media only screen and (max-width: 961px) {
+  #floatingSocialShare {
+    margin-top: 50px;
+  }
+  #floatingSocialShare .top-left,
+  #floatingSocialShare .top-right,
+  #floatingSocialShare .content-left,
+  #floatingSocialShare .content-right {
+    top: auto;
+    bottom: 0;
+    margin: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  #floatingSocialShare a {
+    position: relative;
+    float: left;
+    display: list-item;
+    list-style-type: none;
+  }
+  #floatingSocialShare a:focus,
+  #floatingSocialShare a:hover {
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+  }
+  #floatingSocialShare svg {
+    height: 24px;
+  }
+  #floatingSocialShare .shareCount {
+    top: 30px;
+  }
 }
