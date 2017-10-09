@@ -1,0 +1,150 @@
+@import 'variables';
+
+#floatingSocialShare {
+  position: relative;
+  *, *:before, *:after {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+  }
+  a {
+    position: relative;
+    width: @width;
+    height: @height;
+    line-height: @lineHeight;
+    padding: @padding;
+    display: list-item;
+    list-style-type: none;
+    text-align: center;
+    color: @white;
+    outline: 0 none !important;
+    &:focus, &:hover {
+      color: @white;
+      width: @hoverWidth;
+      opacity: @hoverOpacity;
+      transition-duration: @hoverTransitionDuration;
+      transition-property: right;
+      transition-timing-function: ease-out;
+    }
+    &:focus, &:hover, &:visited, &:active {
+      outline: 0 none !important;
+    }
+  }
+  svg {
+    fill: @white;
+    height: @height;
+  }
+  a.without-counter {
+    svg {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+    }
+  }
+  .shareCount {
+    position: absolute;
+    top: @countTop;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    color: @white;
+    font-size: @countFontSize;
+  }
+  .top-left, .top-right, .content-left, .content-right {
+    position: fixed;
+    top: 25%;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  .top-left {
+    left: 0;
+  }
+  .top-right {
+    right: 0;
+    direction: rtl;
+  }
+  .content-left {
+    margin: 0;
+  }
+  .content-right {
+    margin: 0;
+  }
+  .mail {
+    background-color: @mail;
+  }
+  .facebook {
+    background-color: @facebook;
+  }
+  .google-plus {
+    background-color: @google-plus;
+  }
+  .linkedin {
+    background-color: @linkedin;
+  }
+  .odnoklassniki {
+    background-color: @odnoklassniki;
+  }
+  .pinterest {
+    background-color: @pinterest;
+  }
+  .reddit {
+    background-color: @reddit;
+  }
+  .stumbleupon {
+    background-color: @stumbleupon;
+  }
+  .telegram {
+    background-color: @telegram;
+  }
+  .tumblr {
+    background-color: @tumblr;
+  }
+  .twitter {
+    background-color: @twitter;
+  }
+  .vk {
+    background-color: @vk;
+  }
+  .whatsapp {
+    background-color: @whatsapp;
+  }
+}
+@media only screen and (max-width: @screenSm) {
+  #floatingSocialShare {
+    margin-top: @topMarginMobile;
+    .top-left, .top-right, .content-left, .content-right {
+      top: auto;
+      bottom: 0;
+      margin: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+    a {
+      position: relative;
+      float: left;
+      display: list-item;
+      list-style-type: none;
+      &:focus, &:hover {
+        -moz-transition-property: none;
+        -webkit-transition-property: none;
+        -o-transition-property: none;
+        transition-property: none;
+      }
+    }
+    svg {
+      height: @svgMobileHeight;
+    }
+    .shareCount {
+      top: @height;
+    }
+  }
+}
