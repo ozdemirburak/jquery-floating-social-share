@@ -67,7 +67,6 @@ $(".content").floatingSocialShare({
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
 * **extra_offset**: `Number` *(`15` by default)* Adds an extra offset for `margin-left` if the selected place is `content-right` or `content-left`.
-* **countOffset**: `Number` *(`8` by default)* Adds an extra height for the share count.
 
 ## Full Example
 

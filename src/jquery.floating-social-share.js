@@ -17,8 +17,7 @@
       popup: true,
       popup_width: 400,
       popup_height: 300,
-      extra_offset: 15,
-      countOffset: 8
+      extra_offset: 15
     }, isMobile = updateIsMobile();
 
   function Plugin (element, options) {
@@ -50,9 +49,9 @@
             .replace("{media}", encodeURIComponent(base.settings.media)),
           _text_value = base.settings.text[value] || _text_default + value,
           _text_output = base.settings.text_title_case ? title_case(_text_value) : _text_value,
-          $component = $("<a>", { title: base.settings.title, class: value + " pop-upper"}).attr("href", _href).attr("title", _text_output).attr("target", "_blank").append($icon).addClass('without-counter');
+          $component = $("<a>", { title: base.settings.title, class: value + " pop-upper"}).attr("href", _href).attr("title", _text_output).attr("target", "_blank").append($icon).addClass("without-counter");
         if (base.settings.counter === true) {
-          setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter, base.settings.countOffset);
+          setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter);
         }
         $child.append($component);
       });
@@ -142,7 +141,7 @@
       h = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
       left = (w / 2) - (width / 2) +  10,
       top  = (h / 2) - (height / 2) +  50;
-    window.open(url, title, 'scrollbars=yes, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left).focus();
+    window.open(url, title, "scrollbars=yes, width=" + width + ", height=" + height + ", top=" + top + ", left=" + left).focus();
   }
 
   function title_case(str) {
@@ -153,11 +152,11 @@
 
   function shorten(num) {
     if (num >= 1000000000) {
-      return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
     } else if (num >= 1000000) {
-      return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+      return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
     } else if (num >= 1000) {
-      return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+      return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
     } else {
       return num;
     }
@@ -167,15 +166,19 @@
     $.each(objects, function() {
       if (isMobile) {
         $(this).css("width", 100 / objects.length + "%");
+        $(this).removeClass('with-counter-desktop');
       } else {
         $(this).removeAttr("style");
+        if ($(this).find("span.shareCount").length > 0) {
+          $(this).addClass("with-counter-desktop");
+        }
       }
     });
   }
 
   function checkPlacePosition($child, position, element, extraOffset) {
-    if (isMobile === false && $.inArray(position, ['content-right', 'content-left']) != -1) {
-      var initialOffset = position === 'content-right' ? element.offsetWidth : -75;
+    if (isMobile === false && $.inArray(position, ["content-right", "content-left"]) != -1) {
+      var initialOffset = position === "content-right" ? element.offsetWidth : -75;
       $child.css("margin-left", initialOffset + extraOffset);
     } else {
       $child.css("margin-left", 0);
@@ -188,17 +191,17 @@
 
   function updateIsMobile() {
     var mobile = getWidth() < 961;
-    if (typeof isMobile !== 'undefined') {
+    if (typeof isMobile !== "undefined") {
       isMobile = mobile;
     }
     return mobile;
   }
 
-  function appendButtons(count, $component, countOffset) {
+  function appendButtons(count, $component) {
     if (count && count > 0) {
-      $component.append($("<span>", { class: "shareCount" }).append(shorten(count))).removeClass('without-counter');
+      $component.append($("<span>", { class: "shareCount" }).append(shorten(count))).removeClass("without-counter");
       if (isMobile === false) {
-        $component.height("+=" + countOffset);
+        $component.addClass("with-counter-desktop");
       }
     }
   }
@@ -213,53 +216,53 @@
     return value;
   }
 
-  function setShareCount(network, url, $component, twitter_counter, countOffset) {
+  function setShareCount(network, url, $component, twitter_counter) {
     switch(network) {
       case "facebook":
-        $.getJSON('https://graph.facebook.com/?id=' + url + '&callback=?', function(data) {
-          appendButtons(issetOrZero(function () { return data.share.share_count; }), $component, countOffset);
+        $.getJSON("https://graph.facebook.com/?id=" + url + "&callback=?", function(data) {
+          appendButtons(issetOrZero(function () { return data.share.share_count; }), $component);
         });
         break;
       case "linkedin":
-        $.getJSON('https://www.linkedin.com/countserv/count/share?url=' + url + '&callback=?', function(data) {
-          appendButtons(issetOrZero(function () { return data.count; }), $component, countOffset);
+        $.getJSON("https://www.linkedin.com/countserv/count/share?url=" + url + "&callback=?", function(data) {
+          appendButtons(issetOrZero(function () { return data.count; }), $component);
         });
         break;
       case "odnoklassniki":
-        $.getJSON('https://connect.ok.ru/dk?st.cmd=extLike&ref=' + url + '&callback=?', function() {});
+        $.getJSON("https://connect.ok.ru/dk?st.cmd=extLike&ref=" + url + "&callback=?", function() {});
         window.ODKL = window.ODKL || {};
         window.ODKL.updateCount = function(index, count) {
-          appendButtons(count, $component, countOffset);
+          appendButtons(count, $component);
         }
         break;
       case "pinterest":
-        $.getJSON('https://api.pinterest.com/v1/urls/count.json?url=' + url + '&callback=?', function(data) {
-          appendButtons(issetOrZero(function () { return data.count; }), $component, countOffset);
+        $.getJSON("https://api.pinterest.com/v1/urls/count.json?url=" + url + "&callback=?", function(data) {
+          appendButtons(issetOrZero(function () { return data.count; }), $component);
         });
         break;
       case "reddit":
-        $.getJSON('https://www.reddit.com/api/info.json?url=' + url + '&jsonp=?', function(response) {
-          appendButtons(issetOrZero(function () { return response.data.children[0].data.score; }), $component, countOffset);
+        $.getJSON("https://www.reddit.com/api/info.json?url=" + url + "&jsonp=?", function(response) {
+          appendButtons(issetOrZero(function () { return response.data.children[0].data.score; }), $component);
         });
         break;
       case "tumblr":
-        $.getJSON('https://api.tumblr.com/v2/share/stats?url=' + url + '&callback=?', function(data) {
-          appendButtons(issetOrZero(function () { return data.response.note_count; }), $component, countOffset);
+        $.getJSON("https://api.tumblr.com/v2/share/stats?url=" + url + "&callback=?", function(data) {
+          appendButtons(issetOrZero(function () { return data.response.note_count; }), $component);
         });
         break;
       case "twitter":
         if (twitter_counter == true) {
-          $.getJSON('https://opensharecount.com/count.json?url=' + url + '&callback=?', function(data) {
-            appendButtons(issetOrZero(function () { return data.count; }), $component, countOffset);
+          $.getJSON("https://opensharecount.com/count.json?url=" + url + "&callback=?", function(data) {
+            appendButtons(issetOrZero(function () { return data.count; }), $component);
           });
         }
         break;
       case "vk":
-        $.getJSON('https://vk.com/share.php?act=count&index=1&url=' + url + '&callback=?', function() {});
+        $.getJSON("https://vk.com/share.php?act=count&index=1&url=" + url + "&callback=?", function() {});
         window.VK = window.VK || {};
         window.VK.Share = window.VK.Share || {};
         window.VK.Share.count = function(index, count) {
-          appendButtons(count, $component, countOffset);
+          appendButtons(count, $component);
         }
         break;
       default:
