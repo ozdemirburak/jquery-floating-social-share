@@ -50,6 +50,9 @@
   margin: auto;
   text-align: center;
 }
+#floatingSocialShare a.with-counter-desktop {
+  height: 38px;
+}
 #floatingSocialShare .shareCount {
   position: absolute;
   top: 36px;
