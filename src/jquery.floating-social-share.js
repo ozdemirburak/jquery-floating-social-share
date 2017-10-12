@@ -236,7 +236,7 @@
         }
         break;
       case "pinterest":
-        $.getJSON("https://api.pinterest.com/v1/urls/count.json?url=" + url + "&callback=?", function(data) {
+        $.getJSON("https://api.pinterest.com/v1/urls/count.json?url=" + url.replace(/\/+$/, '/') + "&callback=?", function(data) {
           appendButtons(issetOrZero(function () { return data.count; }), $component);
         });
         break;
