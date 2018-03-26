@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.2
+- Fixed Pinterest url error.
+
 ## 2.1.0
 - Fixed button height issue on resize.
 - Removed `countOffset` property, using css class `with-counter-desktop` instead for the button with counter height.
