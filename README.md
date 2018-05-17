@@ -20,7 +20,7 @@ Or install via npm and include from your `node_modules` folder
 
 `npm install --save jquery-floating-social-share`
 
-Or install via <a target="_blank" href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and the plugin on a page.
+Or install via <a href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and the plugin on a page.
 
 ```html
 <link rel="stylesheet" type="text/css" href="dist/jquery.floating-social-share.min.css" />
@@ -63,6 +63,7 @@ $(".content").floatingSocialShare({
 * **text_title_case**: `Boolean` *(`false` by default)* Converts share text to title case, for instance, share with facebook will become Share With Facebook when set to true.
 * **description**: `String` *(`$('meta[name="description"]').attr("content")` by default)* Sets the description for the share.
 * **media**: `String` *(`$('meta[property="og:image"]').attr("content")` by default)* Sets the media for the Pinterest share.
+* **target**: `Boolean` *(`true` by default)* Opens page sharer links, for instance Twitter intent page, in a new tab.
 * **popup**: `Boolean` *(`true` by default)* Opens links in a popup when set true. When it is false, links are opened in a new tab.
 * **popup_width**: `Number` *(`400` by default)* Sets the sharer popup's width.
 * **popup_height**: `Number` *(`300` by default)* Sets the sharer popup's height.
@@ -90,6 +91,7 @@ $("body").floatingSocialShare({
   text_title_case: false, // if set true, then will convert share texts to title case like Share With G+
   description: $('meta[name="description"]').attr("content"), // your description, default is current page's description
   media: $('meta[property="og:image"]').attr("content"), // pinterest media
+  target: true, // open share pages, such as Twitter and Facebook share pages, in a new tab
   popup: true, // open links in popup
   popup_width: 400, // the sharer popup width, default is 400px
   popup_height: 300 // the sharer popup height, default is 300px

@@ -7,6 +7,7 @@
       place: "top-left",
       counter: true,
       twitter_counter: false,
+      target: true,
       buttons: ["facebook", "twitter", "google-plus"],
       title: document.title,
       url: window.location.href,
@@ -49,7 +50,10 @@
             .replace("{media}", encodeURIComponent(base.settings.media)),
           _text_value = base.settings.text[value] || _text_default + value,
           _text_output = base.settings.text_title_case ? title_case(_text_value) : _text_value,
-          $component = $("<a>", { title: base.settings.title, class: value + " pop-upper"}).attr("href", _href).attr("title", _text_output).attr("target", "_blank").append($icon).addClass("without-counter");
+          $component = $("<a>", { title: base.settings.title, class: value + " pop-upper"}).attr("href", _href).attr("title", _text_output).append($icon).addClass("without-counter");
+        if (base.settings.target === true) {
+          $component.attr("target", "_blank").attr("rel", "noopener noreferrer");
+        }
         if (base.settings.counter === true) {
           setShareCount(value, encodeURI(base.settings.url), $component, base.settings.twitter_counter);
         }
