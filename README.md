@@ -8,7 +8,7 @@ Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest,
 Reddit, Tumblr, VK and Odnoklassniki with counter feature, Google Plus, Mail, StumbleUpon, Telegram, and Whatsapp
 without counter feature.
 
-You can check the plugin on [Online Alarm Clock](http://onlinealarmkur.com/en/).
+You can check the plugin live in here: [https://onlinealarmkur.com/en/](https://onlinealarmkur.com/en/)
 
 ## Getting Started
 
