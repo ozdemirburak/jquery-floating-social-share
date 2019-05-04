@@ -7,27 +7,32 @@ var gulp = require('gulp'),
 
 var src = 'src/', dist = 'dist/';
 
-gulp.task('compile-css', function () {
+function compileCss() {
   return gulp.src(src + '/less/main.less')
     .pipe(less())
     .pipe(rename('jquery.floating-social-share.css'))
     .pipe(gulp.dest(src));
-});
+};
 
-gulp.task('minify-css', function() {
+function minifyCss() {
   return gulp.src(src + 'jquery.floating-social-share.css')
     .pipe(concat('jquery.floating-social-share.min.css'))
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(dist));
-});
+};
 
-gulp.task('minify-js', function() {
+function minifyJs() {
   return gulp.src(src + 'jquery.floating-social-share.js')
     .pipe(concat('jquery.floating-social-share.min.js'))
     .pipe(uglify({mangle: false}))
     .pipe(gulp.dest(dist));
-});
+};
 
-gulp.task('default', function() {
-  gulp.run('minify-js', 'compile-css', 'minify-css');
-})
+var build = gulp.series(compileCss, minifyCss, minifyJs);
+
+exports.compileCss = compileCss;
+exports.minifyCss = minifyCss;
+exports.minifyJs = minifyJs;
+exports.build = build;
+exports.default = build;
+

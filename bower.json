@@ -1,9 +1,9 @@
 {
   "name": "jquery-floating-social-share",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "homepage": "http://github.com/ozdemirburak/jquery-floating-social-share",
   "authors": [
-    "Burak Ozdemir <https://github.com/ozdemirburak>"
+    "Burak Özdemir <mail@burakozdemir.co.uk> (https://ozdemirburak.com)"
   ],
   "main": [
     "src/js/jquery.floating-social-share.js",
@@ -18,12 +18,10 @@
     "social share",
     "social media share",
     "facebook",
-    "google plus",
     "linkedin",
     "odnoklassniki",
     "pinterest",
     "reddit",
-    "stumbleupon",
     "telegram",
     "tumblr",
     "twitter",

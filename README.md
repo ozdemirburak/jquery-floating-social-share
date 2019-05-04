@@ -5,7 +5,7 @@ jQuery Floating Social Share
 
 Simple jQuery floating social media sharer plugin. 
 Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest,
-Reddit, Tumblr, VK and Odnoklassniki with counter feature, Google Plus, Mail, StumbleUpon, Telegram, and Whatsapp
+Reddit, Tumblr, VK and Odnoklassniki with counter feature, Mail, Telegram, and Whatsapp
 without counter feature.
 
 You can check the plugin live in here: [https://onlinealarmkur.com/en/](https://onlinealarmkur.com/en/)
@@ -32,7 +32,7 @@ Finally, call the `floatingSocialShare` method on body with your custom options.
 
 ```javascript
 $("body").floatingSocialShare({
-  buttons: ["facebook", "twitter", "google-plus"],
+  buttons: ["facebook", "twitter"],
   text: "share with:"
 });
 ```
@@ -41,11 +41,10 @@ To make the social share buttons appear next to the specific content, instead of
 
 ```javascript
 $(".content").floatingSocialShare({
-  buttons: ["facebook", "twitter", "google-plus"],
+  buttons: ["facebook", "twitter"],
   text: {
     'facebook': 'Share on Facebook',
-    'twitter': 'Share on Twitter',
-    'google-plus': 'Share on Google Plus'
+    'twitter': 'Share on Twitter'
   },
   place: "content-left"
 });
@@ -56,7 +55,7 @@ $(".content").floatingSocialShare({
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `content-right`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
 * **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to Open Share Count since Twitter API does not provide counters without an API key.
-* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `mail`, `facebook`, `google-plus`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `stumbleupon`, `telegram`, `tumblr`, `twitter` `vk` and `whatsapp`. 
+* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `mail`, `facebook`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `telegram`, `tumblr`, `twitter` `vk` and `whatsapp`. 
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `Object | String` *({'default': 'share with:'} by default)* Sets the share title for the social buttons. If properties are not assigned specifically, will use the default one appended with the button tag, for instance share with facebook.
@@ -77,8 +76,8 @@ $("body").floatingSocialShare({
   counter: true, // set to false for hiding the counters of buttons
   twitter_counter: false, // Twitter API does not provide counters without API key, register to https://opensharecount.com/
   buttons: [ // all of the currently available social buttons
-    "mail", "facebook", "google-plus", "linkedin", "odnoklassniki", 
-    "pinterest", "reddit", "stumbleupon", "telegram", "tumblr", "twitter", 
+    "mail", "facebook", "linkedin", "odnoklassniki", 
+    "pinterest", "reddit", "telegram", "tumblr", "twitter", 
     "vk", "whatsapp"
   ],
   title: document.title, // your title, default is current page's title
@@ -86,7 +85,7 @@ $("body").floatingSocialShare({
   text: { // the title of tags
     'default': 'share with ', 
     'facebook': 'share with facebook', 
-    'google-plus': 'share with g+'
+    'twitter': 'tweet'
   },
   text_title_case: false, // if set true, then will convert share texts to title case like Share With G+
   description: $('meta[name="description"]').attr("content"), // your description, default is current page's description
