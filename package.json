@@ -1,6 +1,6 @@
 {
   "name": "jquery-floating-social-share",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Social media share buttons with counters.",
   "main": "dist/jquery-floating-social-share.min.js",
   "repository": {
@@ -11,7 +11,7 @@
     "jquery": ">=1.8"
   },
   "devDependencies": {
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.0",
     "gulp-less": "^4.0.1",
@@ -31,6 +31,7 @@
     "telegram",
     "tumblr",
     "twitter",
+    "viber",
     "vk",
     "whatsapp"
   ],
