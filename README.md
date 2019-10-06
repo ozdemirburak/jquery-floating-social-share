@@ -5,8 +5,8 @@ jQuery Floating Social Share
 
 Simple jQuery floating social media sharer plugin. 
 Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest,
-Reddit, Tumblr, VK and Odnoklassniki with counter feature, Mail, Telegram, and Whatsapp
-without counter feature.
+Reddit, Tumblr, VK and Odnoklassniki with counter feature, Mail, Telegram, Viber, 
+and Whatsapp without counter feature.
 
 You can check the plugin live in here: [https://onlinealarmkur.com/en/](https://onlinealarmkur.com/en/)
 
