@@ -136,6 +136,10 @@
       }
     };
 
+  /*
+  * Inspired by the answer from Tony M @ Stack Overflow
+  * https://stackoverflow.com/a/16861050
+  */
   function openPopUp(url, title, width, height) {
     var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
       h = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
@@ -144,12 +148,20 @@
     window.open(url, title, "scrollbars=yes, width=" + width + ", height=" + height + ", top=" + top + ", left=" + left).focus();
   }
 
+  /*
+  * Function by Greg Dean @ Stack Overflow
+  * https://stackoverflow.com/a/196991
+  */
   function title_case(str) {
     return str.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
   }
 
+  /*
+  * Function by Yash @ Stack Overflow
+  * https://stackoverflow.com/a/14994860
+  */
   function shorten(num) {
     if (num >= 1000000000) {
       return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
