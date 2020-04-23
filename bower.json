@@ -3,7 +3,7 @@
   "version": "2.3.0",
   "homepage": "http://github.com/ozdemirburak/jquery-floating-social-share",
   "authors": [
-    "Burak Özdemir <mail@burakozdemir.co.uk> (https://ozdemirburak.com)"
+    "Burak Özdemir (https://ozdemirburak.com)"
   ],
   "main": [
     "src/js/jquery.floating-social-share.js",
