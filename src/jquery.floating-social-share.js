@@ -235,11 +235,6 @@
           appendButtons(issetOrZero(function () { return data.share.share_count; }), $component);
         });
         break;
-      case "linkedin":
-        $.getJSON("https://www.linkedin.com/countserv/count/share?url=" + url + "&callback=?", function(data) {
-          appendButtons(issetOrZero(function () { return data.count; }), $component);
-        });
-        break;
       case "odnoklassniki":
         $.getJSON("https://connect.ok.ru/dk?st.cmd=extLike&ref=" + url + "&callback=?", function() {});
         window.ODKL = window.ODKL || {};
