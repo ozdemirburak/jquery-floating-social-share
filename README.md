@@ -49,8 +49,8 @@ $(".content").floatingSocialShare({
 
 * **place**: `String` *(`top-left` by default)* Set the position of the box. Currently: `content-left`, `content-right`, `top-left` and `top-right` are available.
 * **counter**: `Boolean` *(`true` by default)* Set to `false` to hide counters that appear below the buttons.
-* **twitter_counter**: `Boolean` *(`false` by default)* Set to `true` to show twitter counter, but you also need to register to Open Share Count since Twitter API does not provide counters without an API key.
-* **buttons**: `Array` *(`["facebook", "twitter", "google-plus"]` by default)* Sets the social buttons for sharing. Available ones are `mail`, `facebook`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `telegram`, `tumblr`, `twitter`, `viber`, `vk`, and `whatsapp`. 
+* **facebook_token**: `String` *(`null` by default)* To show the Facebook share count, obtain an access token.
+* **buttons**: `Array` *(`["facebook", "twitter"]` by default)* Sets the social buttons for sharing. Available ones are `mail`, `facebook`, `linkedin`, `odnoklassniki`, `pinterest`, `reddit`, `telegram`, `tumblr`, `twitter`, `viber`, `vk`, and `whatsapp`. 
 * **title**: `String` *(`document.title` by default)* Sets the title for the share message.
 * **url**: `String` *(`window.location.href` by default)* Sets the url for the share message.
 * **text**: `Object | String` *({'default': 'share with:'} by default)* Sets the share title for the social buttons. If properties are not assigned specifically, will use the default one appended with the button tag, for instance share with facebook.
