@@ -74,7 +74,7 @@ $(".content").floatingSocialShare({
 $("body").floatingSocialShare({
   place: "top-left", // alternatively content-left, content-right, top-right
   counter: true, // set to false for hiding the counters of buttons
-  twitter_counter: false, // Twitter API does not provide counters without API key, register to https://opensharecount.com/
+  facebook_token: null, // To show Facebook share count, obtain a token, see: https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token/43570120#43570120 
   buttons: [ // all of the currently available social buttons
     "mail", "facebook", "linkedin", "odnoklassniki", 
     "pinterest", "reddit", "telegram", "tumblr", "twitter", 

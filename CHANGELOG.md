@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.4.0
+- Updated icons
+- Removed Twitter counter
+- Removed Linkedin counter
+- Fixed Facebook counter
+
+## 2.3.0
+- Viber icon
+
+## 2.2.0
+- Removed deprecated icons
+
+## 2.1.3
+- rel opener and nofollow for anchors
+
 ## 2.1.2
 - Fixed Pinterest url error.
 
@@ -11,7 +26,7 @@
 - Added `popup` option for opening links in popup or not.
 
 ## 2.0.0
-- Removed Font Awesome dependency, using simple icons as the SVG source
+- Removed Font Awesome dependency, using [simple icons](https://github.com/simple-icons/simple-icons) as the SVG source
 - Renamed `envelope` to `mail`
 - Changed button colors
 
