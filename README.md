@@ -4,21 +4,16 @@ jQuery Floating Social Share
 [![npm][npm-image]][npm-url] [![downloads][downloads-image]][npm-url]
 
 Simple jQuery floating social media sharer plugin. 
-Currently supported platforms are Facebook, Twitter, Linkedin, Pinterest,
-Reddit, Tumblr, VK and Odnoklassniki with counter feature, Mail, Telegram, Viber, 
-and Whatsapp without counter feature.
+Currently supported platforms are Facebook, Pinterest, Reddit, Tumblr, VK and Odnoklassniki with counter feature; 
+Twitter, Linkedin, Mail, Telegram, Viber, and Whatsapp without counter feature.
 
 You can check the plugin live in here: [https://onlinealarmkur.com/en/](https://onlinealarmkur.com/en/)
 
 ## Getting Started
 
-Install via bower and include from your `bower_components` folder.
+Install via npm:
 
-`bower install --save jquery-floating-social-share`
-
-Or install via npm and include from your `node_modules` folder
-
-`npm install --save jquery-floating-social-share`
+    npm install --save jquery-floating-social-share
 
 Or install via <a href="https://github.com/ozdemirburak/jquery-floating-social-share/archive/master.zip">zip</a>, then include jQuery and the plugin on a page.
 
@@ -74,7 +69,7 @@ $(".content").floatingSocialShare({
 $("body").floatingSocialShare({
   place: "top-left", // alternatively content-left, content-right, top-right
   counter: true, // set to false for hiding the counters of buttons
-  twitter_counter: false, // Twitter API does not provide counters without API key, register to https://opensharecount.com/
+  facebook_token: null, // To show Facebook share count, obtain a token, see: https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token/43570120#43570120 
   buttons: [ // all of the currently available social buttons
     "mail", "facebook", "linkedin", "odnoklassniki", 
     "pinterest", "reddit", "telegram", "tumblr", "twitter", 
